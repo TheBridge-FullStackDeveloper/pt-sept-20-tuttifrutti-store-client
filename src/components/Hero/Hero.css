@@ -1,0 +1,31 @@
+
+ 
+  .heroContainer__imageContainer {
+    height: 300px;
+
+  }
+  
+  .heroTextContainer {
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(67, 66, 66);
+  }
+
+  .heroTextContainer__brandName{
+      font-size: 3rem;
+  }
+  .heroContainer{
+      width: auto;
+      height: 20%;
+      overflow: hidden;
+      position:relative;    
+  }
+
+  .heroContainer__image{
+      width: 100%;
+      background-size: cover;
+      position: relative;
+  }
