@@ -9,7 +9,7 @@
 
   &__icon {
     border-radius: 50%;
-    font-size: 32px;
+    font-size: 20px;
     color: lightgray;
   }
 
@@ -23,6 +23,8 @@
       cursor: pointer;
       box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       color: #93a42a;
+      background-color: rgba(111, 114, 119, 0.213);
     }
   }
 }
+

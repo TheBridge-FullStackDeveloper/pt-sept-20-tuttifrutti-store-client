@@ -14,17 +14,17 @@ const icons = {
 };
 
 // From Header component we should import this one and pass props: text, icon type and the onclick. Example as follows
-export default function IconLink({ text = "Profile", type = "profile", onClick }) {
+export default function IconLink({ text = "", type = "", onClick }) {
   return (
     <>
-      <div className="iconlink iconlink--hover">
+      <div className="iconlink iconlink--hover " title={text.toUpperCase()}>
         <FontAwesomeIcon
           icon={icons[type]}
           className="iconlink__icon iconlink--hover"
-          onClick={() => { console.log(`I will redirect to ${text} page`)}}
+          onClick={onClick}
         />
+      
       </div>
-      <label class="iconlink__text">{text.toUpperCase()}</label>
     </>
   );
 }
