@@ -1,7 +1,7 @@
-import "./Search.scss";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+import "./Search.scss";
 
 import { useState } from "react";
 
@@ -10,12 +10,6 @@ export default function Search() {
 
   const handleChange = (event) => {
     setProduct(event.target.value);
-  };
-
-  const handleClickSearch = () => {
-    const APIURL = `http://category/${product}`;
-    console.log(APIURL);
-    setProduct("");
   };
 
   return (
@@ -27,7 +21,7 @@ export default function Search() {
         placeholder="Search a product"
         type="text"
       ></input>
-      <FontAwesomeIcon icon={faSearch} onClick={handleClickSearch} className='searchbox__icon searchbox__icon--hover'/>
+      <FontAwesomeIcon icon={faSearch} className='searchbox__icon searchbox__icon--hover'/>
     </div>
   );
 }
