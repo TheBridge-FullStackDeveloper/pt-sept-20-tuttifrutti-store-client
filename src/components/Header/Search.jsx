@@ -19,7 +19,7 @@ export default function Search() {
   };
 
   return (
-    <div className="searchbox ">
+    <div className="searchbox">
       <input
         className="searchbox__input"
         value={product}
@@ -27,7 +27,7 @@ export default function Search() {
         placeholder="Search a product"
         type="text"
       ></input>
-      <FontAwesomeIcon icon={faSearch} onClick={handleClickSearch} className='searchbox__icon'/>
+      <FontAwesomeIcon icon={faSearch} onClick={handleClickSearch} className='searchbox__icon searchbox__icon--hover'/>
     </div>
   );
 }

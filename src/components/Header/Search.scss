@@ -19,6 +19,16 @@
 
     &__icon{
         padding: 20px;
-
+        color: lightgray;
+        &--hover {
+            &:hover {
+              cursor: pointer;
+              border-radius: 50%;
+              box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
+              color: #93a42a;
+              background-color: rgba(47, 48, 49, 0.213);
+            }
+          }
     }
+
 }
