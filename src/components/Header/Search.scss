@@ -1,0 +1,12 @@
+.searchbox {
+    display: flex;
+    
+    &__input {
+        border: 1px solid lightgray;
+        border-radius: 20px;
+        width: 200px;
+        outline-style:none;
+        text-indent: 10px;
+        text-align: start;
+    }
+}

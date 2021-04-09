@@ -1,41 +1,31 @@
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/SearchRounded";
+import "./Search.scss";
+import IconLink from "./IconLink";
 
 import { useState } from "react";
 
 export default function Search() {
   const [product, setProduct] = useState("");
-  const [productList, setProductList] = useState([]);
-
-  console.log(productList)
 
   const handleChange = (event) => {
     setProduct(event.target.value);
   };
 
   const handleClickSearch = () => {
-    const APIURL = `http://something/${product}`;
-    setProductList([...productList, { product }]);
+    const APIURL = `http://category/${product}`;
+    console.log(APIURL);
     setProduct("");
   };
 
   return (
-    <div>
+    <div className="searchbox ">
       <input
-        className="searchbox"
+        className="searchbox__input"
         value={product}
         onChange={handleChange}
-        placeholder="Search for a product"
+        placeholder="Search a product"
         type="text"
       ></input>
-      <Fab
-        color="primary"
-        aria-label="add"
-        size="small"
-        onClick={handleClickSearch}
-      >
-        <AddIcon />
-      </Fab>
+      <IconLink text="Search" type="search" onClick={handleClickSearch} />
     </div>
   );
 }
