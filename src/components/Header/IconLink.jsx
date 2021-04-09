@@ -17,13 +17,12 @@ const icons = {
 export default function IconLink({ text = "", type = "", onClick }) {
   return (
     <>
-      <div className="iconlink iconlink--hover " title={text.toUpperCase()}>
+      <div className="iconlink iconlink--hover" data-title={text}>
         <FontAwesomeIcon
           icon={icons[type]}
           className="iconlink__icon iconlink--hover"
           onClick={onClick}
         />
-      
       </div>
     </>
   );

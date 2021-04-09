@@ -21,10 +21,38 @@
   &--hover {
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+      box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
       color: #93a42a;
-      background-color: rgba(111, 114, 119, 0.213);
+      background-color: rgba(47, 48, 49, 0.213);
     }
   }
 }
 
+[data-title] {
+  position: relative;
+
+  &:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -26px;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 2px;
+    background: #93a42a;
+    color: #fff;
+    font-size: 12px;
+    font-family: sans-serif;
+    white-space: nowrap;
+  }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 8px;
+    display: inline-block;
+    color: #fff;
+    border: 8px solid transparent;
+    border-bottom: 8px solid #93a42a;
+  }
+}
