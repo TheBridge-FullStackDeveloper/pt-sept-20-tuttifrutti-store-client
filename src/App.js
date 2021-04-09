@@ -1,7 +1,8 @@
 import "./App.css";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route,  Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar.jsx";
+import Category from "./pages/Category"
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
           {/* go to profile */}
         </Route>
         <Route exact path="/category/:category">
-          {/* aquí va el componente category */}
+         <Category/>
         </Route>
-        <Redirect to="/home" />
+       
       </Switch>
     </div>
   );

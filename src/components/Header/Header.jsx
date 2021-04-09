@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import frutti from "../../assets/tuttifrutti-2-min.jpg";
-import Picture from "./../Pictures";
+import Picture from "../Pictures";
 import "./Header.scss";
 
 export default function Header() {
