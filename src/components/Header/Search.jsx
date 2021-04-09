@@ -1,5 +1,7 @@
 import "./Search.scss";
-import IconLink from "./IconLink";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
@@ -25,7 +27,7 @@ export default function Search() {
         placeholder="Search a product"
         type="text"
       ></input>
-      <IconLink text="Search" type="search" onClick={handleClickSearch} />
+      <FontAwesomeIcon icon={faSearch} onClick={handleClickSearch} className='searchbox__icon'/>
     </div>
   );
 }
