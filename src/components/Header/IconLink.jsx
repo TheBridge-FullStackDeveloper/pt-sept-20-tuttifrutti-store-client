@@ -12,7 +12,7 @@ const icons = {
   fav: faHeart,
   cart: faCartArrowDown,
   search: faSearch,
-  profile: faUserCircle,
+  profile: faUserCircle
 };
 
 export default function IconLink({ text = "", type = "", path = "" }) {

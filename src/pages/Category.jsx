@@ -1,34 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 // import {Link} from "react-router-dom"
-
 
 // import axios from "axios"
 import { useParams } from 'react-router';
 
-const productsMock =
-[{
-    category: "alimentos",
+const productsMock = [
+  {
+    category: 'alimentos',
     stock: 20,
     productRef: 5676986,
-    productName: "frutas",
-    brand: "alcoli",
+    productName: 'frutas',
+    brand: 'alcoli',
     price: 45,
-    pictures:"picture",
-    description:"fruta fresca",
+    pictures: 'picture',
+    description: 'fruta fresca',
     weight: 6,
-    weightType: "kg",
-}, {
-    category: "bebidas",
+    weightType: 'kg'
+  },
+  {
+    category: 'bebidas',
     stock: 20,
     productRef: 5676777,
-    productName: "verduras",
-    brand: "alcoli",
+    productName: 'verduras',
+    brand: 'alcoli',
     price: 45,
-    pictures:"picture",
-    description:"verdura fresca",
+    pictures: 'picture',
+    description: 'verdura fresca',
     weight: 7,
-    weightType: "kg",
-}];
+    weightType: 'kg'
+  }
+];
 
 export default function Category() {
    
