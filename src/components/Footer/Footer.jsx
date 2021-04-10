@@ -9,7 +9,7 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="Footer">
       <div className="Footer__socialIcons__list">
         <a href="https://www.instagram.com/">
           <FontAwesomeIcon

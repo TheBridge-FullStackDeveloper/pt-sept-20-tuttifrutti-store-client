@@ -4,7 +4,7 @@
 }
 
 .Footer {
-  background-color: rgb(82, 82, 82);
+  background-color: var(--color-gray-background);
   color: var(--color-offwhite-text);
   text-align: center;
   display: flex;
