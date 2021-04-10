@@ -32,31 +32,34 @@ const productsMock = [
 ];
 
 export default function Category() {
-  const [products, setProducts] = useState([]);
+   
+   
+    const [products, setProducts] = useState([]);
 
-  const { category } = useParams();
+    // const {category}= useParams();
+    
 
-  // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get(`http://localhost:4000/products/category/${category}`)
-  //             .then(res => {
-  //                 setProducts(res.data);
+    // useEffect(() => {
+    //     const fecthData = async () => {
+    //         await axios.get(`http://localhost:4000/products/category/${category}`)
+    //             .then(res => {
+    //                 setProducts(res.data);
+                    
+    //                 console.log(category);
+    //             });
+    //     };
+    //     fecthData();
+    // }, []);
 
-  //                 console.log(category);
-  //             });
-  //     };
-  //     fecthData();
-  // }, []);
 
-  useEffect(() => {
-    setProducts(productsMock);
-  }, []);
-
-  return (
-    <div className="product">
-      {products.map((p, entry) => (
-        <h3>{p.productName}</h3>
-      ))}
-    </div>
-  );
+    useEffect(()=>{
+        setProducts(productsMock)
+    },[])
+    
+    return (
+        <div className="product">
+          { products.map((p, entry)=><h3>{p.productName}</h3>) }
+          
+        </div>
+    )
 }
