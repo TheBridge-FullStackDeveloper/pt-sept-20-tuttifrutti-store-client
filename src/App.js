@@ -1,8 +1,11 @@
-import "./App.css";
-import { Route,  Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar.jsx";
+import Footer from "./components/Footer/Footer"
 import Category from "./pages/Category"
+
+import "./App.css";
 
 function App() {
   return (
@@ -27,10 +30,11 @@ function App() {
           {/* go to profile */}
         </Route>
         <Route exact path="/category/:category">
-         <Category/>
+          <Category />
         </Route>
-       
+
       </Switch>
+      <Footer />
     </div>
   );
 }
