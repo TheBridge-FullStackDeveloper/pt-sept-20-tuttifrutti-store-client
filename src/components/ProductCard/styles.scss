@@ -1,0 +1,51 @@
+.productCard {
+  width: 250px;
+  height: 250px;
+  border: 10px solid rgb(136, 128, 128);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem 0.5rem 0.25rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+
+  &__title {
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0;
+    color: green;
+    text-transform: capitalize;
+  }
+
+  &__cardBrand {
+    margin: 2px;
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+
+  &__cardPrice {
+    margin: 7px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 16px;
+    color: green;
+  }
+
+  &__cardDescription {
+    border-radius: 50%;
+    font-size: 12px;
+    color: black;
+    text-align: justify;
+    margin: 1px;
+  
+  }
+
+  
+  &__cardImg {
+    align-items: center;
+    width: 105px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
