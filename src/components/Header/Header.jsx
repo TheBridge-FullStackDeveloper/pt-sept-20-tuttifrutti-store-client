@@ -17,7 +17,9 @@ export default function Header() {
            {/* search component */}
       </div>
       <div>
-       
+
+      {/* // TODO Fix text props to correspond the icon */}
+      
         <IconLink type="cart" text="cart" path="/cart"/>
         <IconLink type="fav" text="cart" path="/fav"/>
         <IconLink type="profile" text="cart" path="/profile"/>

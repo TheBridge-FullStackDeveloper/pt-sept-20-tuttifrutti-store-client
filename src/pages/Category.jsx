@@ -35,7 +35,7 @@ export default function Category() {
    
     const [products, setProducts] = useState([]);
 
-    const {category}= useParams();
+    // const {category}= useParams();
     
 
     // useEffect(() => {

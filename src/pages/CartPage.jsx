@@ -53,7 +53,7 @@ export default function CartPage(){
        <button>COMPRAR AHORA</button>
        </div>
        <div>
-           {productSaved.map((p,entry)=><h3>{p.productName}</h3>)}
+           {productSaved.map((p)=><h3 key={p.ref}>{p.productName}</h3>)}
        </div>
         </div>
 
