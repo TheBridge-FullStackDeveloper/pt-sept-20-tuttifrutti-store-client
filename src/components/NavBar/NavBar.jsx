@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./navBar.scss";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './navBar.scss';
 
 // import axios from "axios"
 
-const categoriesMock = [{ name: "alimentos" }, { name: "bebidas" }];
+const categoriesMock = [{ name: 'alimentos' }, { name: 'bebidas' }];
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);

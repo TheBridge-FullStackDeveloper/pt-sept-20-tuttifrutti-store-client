@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
-import frutti from "../../assets/tuttifrutti-2-min.jpg";
-import Picture from "../Pictures";
-import "./Header.scss";
+import frutti from '../../assets/tuttifrutti-2-min.jpg';
+import Picture from '../Pictures';
+import './Header.scss';
 
 export default function Header() {
   return (
@@ -9,12 +9,8 @@ export default function Header() {
       <div>
         <Picture picture={frutti} name={frutti} />
       </div>
-      <div>
-           {/* search component */}
-      </div>
-      <div>
-        {/* Icon component */}
-      </div>
+      <div>{/* search component */}</div>
+      <div>{/* Icon component */}</div>
     </div>
   );
 }

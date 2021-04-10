@@ -1,11 +1,11 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from 'react-router-dom';
 
-import Header from "./components/Header/Header";
-import NavBar from "./components/NavBar/NavBar.jsx";
-import Footer from "./components/Footer/Footer"
-import Category from "./pages/Category"
+import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar.jsx';
+import Footer from './components/Footer/Footer';
+import Category from './pages/Category';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
@@ -32,7 +32,6 @@ function App() {
         <Route exact path="/category/:category">
           <Category />
         </Route>
-
       </Switch>
       <Footer />
     </div>
