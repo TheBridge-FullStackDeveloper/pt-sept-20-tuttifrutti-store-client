@@ -1,12 +1,16 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
+import { UserContext } from './store';
 
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/index';
 import Category from './pages/Category';
-import CartPage from "./pages/CartPage";
+import CartPage from './pages/CartPage';
+import Login from './components/LoginForm/Login';
 
+import Auth from './hooks/auth';
 import './App.css';
 
 const productListMock = [
@@ -57,37 +61,43 @@ const productListMock = [
 ];
 
 function App() {
+  const { user, login, logout, register, loading } = Auth();
+
   return (
-    <div className="App">
-      <h3>TuttiFrutti store</h3>
-      <Header />
-      <NavBar />
-      <Switch>
-        <Route exact path="/home">
-          {/* home */}
-          <ProductList title="product list" productListMock={productListMock} />
-        </Route>
-        <Route exact path="/search">
-          {/* search component */}
-        </Route>
-        
-        <Route exact path="/favs">
-          {/* go to favorites */}
-        </Route>
+    <UserContext.Provider value={{ user, login, logout, loading }}>
+      <div className="App">
+        <h3>TuttiFrutti store</h3>
+        <Header />
+        <NavBar />
+        <Switch>
+          <Route exact path="/home">
+            {/* home */}
+            <ProductList
+              title="product list"
+              productListMock={productListMock}
+            />
+          </Route>
+          <Route exact path="/search">
+            {/* search component */}
+          </Route>
 
-        <Route exact path="/cart">
-          <CartPage />
-        </Route>
-
-        <Route exact path="/profile">
-          {/* go to profile */}
-        </Route>
-        <Route exact path="/category/:category">
-          <Category />
-        </Route>
-      </Switch>
-      <Footer />
-    </div>
+          <Route exact path="/favs">
+            {/* go to favorites */}
+          </Route>
+          <Route exact path="/cart">
+            <CartPage />
+          </Route>
+          <Route exact path="/profile"></Route>
+          <Route path="/login" exact>
+            {user ? <Redirect to="/profile" /> : <Login />}
+          </Route>
+          <Route exact path="/category/:category">
+            <Category />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </UserContext.Provider>
   );
 }
 
