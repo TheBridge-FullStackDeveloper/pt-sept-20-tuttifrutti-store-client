@@ -1,10 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import Auth from '../../hooks/auth';
-
 export default function Login() {
-  const { login } = Auth(); // this should be changed for the context
-
   const {
     handleSubmit,
     register,
@@ -12,7 +8,7 @@ export default function Login() {
   } = useForm();
 
   const handleFormSubmit = (formValues) => {
-    login(formValues.email, formValues.password);
+    console.log(formValues);
   };
 
   return (
