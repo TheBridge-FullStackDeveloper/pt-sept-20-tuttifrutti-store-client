@@ -5,7 +5,8 @@ import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/index';
 import Category from './pages/Category';
-import CartPage from "./pages/CartPage";
+import CartPage from './pages/CartPage';
+import OrderPage from './pages/OrderPage';
 
 import './App.css';
 
@@ -70,13 +71,17 @@ function App() {
         <Route exact path="/search">
           {/* search component */}
         </Route>
-        
+
         <Route exact path="/favs">
           {/* go to favorites */}
         </Route>
 
         <Route exact path="/cart">
           <CartPage />
+        </Route>
+
+        <Route exact path="/order">
+          <OrderPage />
         </Route>
 
         <Route exact path="/profile">
