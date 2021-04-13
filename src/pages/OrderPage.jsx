@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/CartPage.scss';
 
-const productSavedMock = [
+const OrderProductsMock = [
   {
     category: 'alimentos',
     stock: 20,
@@ -29,8 +28,8 @@ const productSavedMock = [
   }
 ];
 
-export default function CartPage() {
-  const [productSaved, setProductSaved] = useState(productSavedMock);
+export default function OrderPage() {
+  const [OrderProductSaved, setOrderProductSaved] = useState(OrderProductsMock);
 
   // useEffect(() => {
   //     const fecthData = async () => {
@@ -45,22 +44,12 @@ export default function CartPage() {
   // }, []);
 
   useEffect(() => {
-    setProductSaved(productSavedMock);
+    setOrderProductSaved(OrderProductsMock);
   }, []);
 
   return (
     <div>
-      <h3>MI CARRITO</h3>
-
-      <Link className="buttoncart" to="/order">
-        COMPRAR AHORA
-      </Link>
-
-      <div>
-        {productSaved.map((p) => (
-          <h3 key={p.ref}>{p.productName}</h3>
-        ))}
-      </div>
+      <h3>ORDER</h3>
     </div>
   );
 }

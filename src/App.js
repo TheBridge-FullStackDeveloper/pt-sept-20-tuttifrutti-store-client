@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/index';
 import Category from './pages/Category';
 import CartPage from './pages/CartPage';
+import OrderPage from './pages/OrderPage';
 import Login from './components/LoginForm/Login';
 
 import './App.css';
@@ -75,13 +76,23 @@ function App() {
         <Route exact path="/favs">
           {/* go to favorites */}
         </Route>
+    
         <Route exact path="/cart">
           <CartPage />
         </Route>
-        <Route exact path="/profile"></Route>
+
+        <Route exact path="/order">
+          <OrderPage />
+        </Route>
+
+        <Route exact path="/profile">
+          {/* go to profile */}
+        </Route>
+    
         <Route path="/login">
           <Login />
         </Route>
+    
         <Route exact path="/category/:category">
           <Category />
         </Route>
