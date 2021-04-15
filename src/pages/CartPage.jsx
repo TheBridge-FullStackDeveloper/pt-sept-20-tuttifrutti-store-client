@@ -1,9 +1,11 @@
+import React, { useState, useEffect } from 'react';
 
-import React, { useState, useEffect } from "react";
+import '../styles/CartPage.scss';
+
 
 import ProductOptionCard from "../components/ProductOptionCard/ProductOptionCard"
 
-// import Button from "../components/Button/index"
+
 
 import "../styles/CartPage.scss"
 
