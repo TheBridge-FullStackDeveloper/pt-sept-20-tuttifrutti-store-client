@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+
+
+import "../styles/Category.scss";
 // import {Link} from "react-router-dom"
 
 // import axios from "axios"
-import { useParams } from 'react-router';
+//import { useParams } from 'react-router';
 
 const productsMock = [
   {
@@ -58,7 +61,7 @@ export default function Category() {
     
     return (
         <div className="product">
-          { products.map((p, entry)=><h3>{p.productName}</h3>) }
+          { products.map((p)=><h3 key={p.productRef}>{p.productName}</h3>) }
           
         </div>
     )

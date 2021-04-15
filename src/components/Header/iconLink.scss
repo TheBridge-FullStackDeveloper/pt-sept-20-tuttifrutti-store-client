@@ -1,3 +1,16 @@
+// .iconBox{
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: row;
+ 
+  
+//   // margin: 10px;
+//   min-width: 80px;
+//   border: 2px solid yellow;
+
+// }
+
+
 .iconlink {
   border-radius: 50%;
   width: 32px;
@@ -6,6 +19,7 @@
   justify-content: center;
   display: flex;
   transition: box-shadow 0.3s;
+  border: 1px solid red;
 
   &__icon {
     border-radius: 50%;
@@ -22,7 +36,7 @@
     &:hover {
       cursor: pointer;
       box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
-      color: #93a42a;
+      color:  rgb(169 169 169);
       background-color: rgba(47, 48, 49, 0.213);
     }
   }
@@ -38,7 +52,7 @@
     display: inline-block;
     padding: 3px 6px;
     border-radius: 2px;
-    background: #93a42a;
+    background:  rgb(169 169 169);
     color: #fff;
     font-size: 12px;
     font-family: sans-serif;
@@ -53,6 +67,6 @@
     display: inline-block;
     color: #fff;
     border: 8px solid transparent;
-    border-bottom: 8px solid #93a42a;
+    border-bottom: 8px solid  rgb(169 169 169);
   }
 }

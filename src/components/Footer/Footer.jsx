@@ -5,7 +5,7 @@ import { faSnapchat } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-import './Footer.css';
+import './Footer.scss';
 
 export default function Footer() {
   return (
@@ -37,7 +37,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="Footer__listContainer">
-        <ul className="Footer__list">
+        {/* <ul className="Footer__list">
           <li className="listFooterItem">
             <a href="#">Home</a>
           </li>
@@ -53,7 +53,7 @@ export default function Footer() {
           <li className="listFooterItem">
             <a href="#">Privacy Policy</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="copytightContainer">
         <p className="copyright">Tutti Frutti © 2012</p>

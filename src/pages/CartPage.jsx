@@ -1,33 +1,42 @@
 
 import React, { useState, useEffect } from "react";
 
-const productSavedMock = [{
-    category: "alimentos",
-    stock: 20,
-    productRef: 5676986,
-    productName: "frutas",
-    brand: "alcoli",
-    price: 45,
-    pictures:"picture",
-    description:"fruta fresca",
-    weight: 6,
-    weightType: "kg",
-}, {
-    category: "bebidas",
-    stock: 20,
-    productRef: 5676777,
-    productName: "verduras",
-    brand: "alcoli",
-    price: 45,
-    pictures:"picture",
-    description:"verdura fresca",
-    weight: 7,
-    weightType: "kg",
-}];
+import ProductOptionCard from "../components/ProductOptionCard/ProductOptionCard"
+
+// import Button from "../components/Button/index"
+
+import "../styles/CartPage.scss"
+
+const productSavedMock= [
+    {
+      category: 'alimentos',
+      stock: 20,
+      productRef: 5676986,
+      productName: 'frutas',
+      brand: 'alcoli',
+      price: 45,
+      pictures: 'picture',
+      description: 'fruta fresca',
+      weight: 6,
+      weightType: 'kg'
+    },
+    {
+      category: 'bebidas',
+      stock: 20,
+      productRef: 5676777,
+      productName: 'verduras',
+      brand: 'alcoli',
+      price: 45,
+      pictures: 'picture',
+      description: 'verdura fresca',
+      weight: 7,
+      weightType: 'kg'
+    }
+  ];
 
 export default function CartPage(){
 
-    const [productSaved, setProductSaved] = useState(productSavedMock);
+    const [productSaved, setProductSaved] = useState([]);
 
     // useEffect(() => {
     //     const fecthData = async () => {
@@ -47,13 +56,18 @@ export default function CartPage(){
 
 
     return (
-        <div>
-        <h3>MI CARRITO</h3>
+        <div className="cartPage">
+        <h3>My Cart</h3>
        <div>
+         {/* aqui debería ir el button comprar ahora, utilizando el componente Button¿? */}
+         {/* <Button text={COMPRAR AHORA}/> */}
+
        <button>COMPRAR AHORA</button>
        </div>
-       <div>
-           {productSaved.map((p)=><h3 key={p.ref}>{p.productName}</h3>)}
+       <div className="productSavedCart">
+           {/* {productSaved.map((p)=><h3 key={p.ref}>{p.productName}</h3>)} */}
+
+           {productSaved.map((p)=><div key={p.productRef}><ProductOptionCard picture={p.pictures} name={p.productName} productId={p.productRef} onClickDelete={()=>{}} price ={p.price} /></div>)}
        </div>
         </div>
 

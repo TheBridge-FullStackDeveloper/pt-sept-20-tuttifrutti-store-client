@@ -1,32 +1,27 @@
 import { Route, Switch } from 'react-router-dom';
 
+import Category from './pages/Category';
+import CartPage from "./pages/CartPage";
+import Home from "./pages/home"
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
-import ProductCard from './components/ProductCard/index';
-import Category from './pages/Category';
-import CartPage from "./pages/CartPage";
 
 import './App.css';
-
-const cardprops =  { 
-  productName: "pineapple",
-  picture: "https://www.complementosdelcafe.com/1784-large_default/acme-taza-verde-flat-white-150ml.jpg",
-  price: 1,
-  description: "Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.",
-  brand: "tropical",
-}
 
 function App() {
   return (
     <div className="App">
-      <h3>TuttiFrutti store</h3>
-      <Header />
+        <Header />
+        <NavBar />
+
+      {/* hemos decidido quitar el título  */}
+      {/* <Header />
       <NavBar />
+      <Footer /> */}
       <Switch>
-        <Route exact path="/home">
-          {/* home */}
-          <ProductCard {...cardprops} />
+        <Route exact path="/">
+          <Home/>
         </Route>
         <Route exact path="/search">
           {/* search component */}
@@ -47,7 +42,10 @@ function App() {
           <Category />
         </Route>
       </Switch>
+
       <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 }
