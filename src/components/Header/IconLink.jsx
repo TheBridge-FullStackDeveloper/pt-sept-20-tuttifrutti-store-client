@@ -17,6 +17,8 @@ const icons = {
 
 export default function IconLink({ text = "", type = "", path = "" }) {
   return (
+   
+    <div className="iconBox">
     <div className="iconlink iconlink--hover" data-title={text}>
       <Link to={path}>
         <FontAwesomeIcon
@@ -25,5 +27,7 @@ export default function IconLink({ text = "", type = "", path = "" }) {
         />
       </Link>
     </div>
+    </div>
+    
   );
 }

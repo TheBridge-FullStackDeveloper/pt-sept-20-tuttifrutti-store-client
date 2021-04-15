@@ -1,11 +1,13 @@
 import { Route, Switch } from 'react-router-dom';
 
+import Category from './pages/Category';
+import CartPage from "./pages/CartPage";
+import Home from "./pages/home"
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/index';
-import Category from './pages/Category';
-import CartPage from './pages/CartPage';
+
 import OrderPage from './pages/OrderPage';
 import Login from './components/LoginForm/Login';
 
@@ -61,13 +63,18 @@ const productListMock = [
 function App() {
   return (
     <div className="App">
-      <h3>TuttiFrutti store</h3>
-      <Header />
+        <Header />
+        <NavBar />
+
+      {/* hemos decidido quitar el título  */}
+      {/* <Header />
       <NavBar />
+      <Footer /> */}
       <Switch>
-        <Route exact path="/home">
-          {/* home */}
-          <ProductList title="product list" productListMock={productListMock} />
+        <Route exact path="/">
+          <Home/>
+        
+          {/* <ProductList title="product list" productListMock={productListMock} /> */}
         </Route>
         <Route exact path="/search">
           {/* search component */}
@@ -97,7 +104,10 @@ function App() {
           <Category />
         </Route>
       </Switch>
+
       <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 }
