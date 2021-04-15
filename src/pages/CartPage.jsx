@@ -59,13 +59,12 @@ export default function CartPage(){
         <div className="cartPage">
         <h3>My Cart</h3>
        <div>
-         {/* aqui debería ir el button comprar ahora, utilizando el componente Button¿? */}
-         {/* <Button text={COMPRAR AHORA}/> */}
+       
 
        <button>COMPRAR AHORA</button>
        </div>
        <div className="productSavedCart">
-           {/* {productSaved.map((p)=><h3 key={p.ref}>{p.productName}</h3>)} */}
+         
 
            {productSaved.map((p)=><div key={p.productRef}><ProductOptionCard picture={p.pictures} name={p.productName} productId={p.productRef} onClickDelete={()=>{}} price ={p.price} /></div>)}
        </div>

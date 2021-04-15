@@ -17,8 +17,7 @@ export default function ProductOptionCard({picture, name, className, onClickDele
                 
                 <Button className = {className} onClick={onClickDelete} type={type} text="Eliminar"/>
                 <Link to={`/product/${productId}`}>VER PRODUCTO</Link>
-                  {/* <Eliminar className = {className} onClick={onClick} type={type} text={text}/>
-                <VerProduct className = {className} onClick={onClick} type={type} text={text}/> */}
+                 
                 
             </div>
         </div>
