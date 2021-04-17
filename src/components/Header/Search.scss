@@ -19,19 +19,19 @@
   }
 
   &__icon {
-    padding: 20px;
+    padding: 6px;
     // color: lightgray;
     color: rgb(169 169 169);
 
     &--hover {
       &:hover {
         cursor: pointer;
-        border-radius: 50%;
+        border-radius: 0% 50% 50% 0%;
         // box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
         // color:lightgrey;
         // background-color: rgb(169 169 169);
         // background-color: lightgray;
-        background-color: #e2ebef;
+        background-color: #b7d4e0;
       }
     }
   }

@@ -16,7 +16,7 @@ export default function Header() {
         <Search />
       </div>
 
-      <div>
+      <div className="header__icons">
         <IconLink type="cart" text="Add to Cart" path="/cart" />
         <IconLink type="fav" text="Favourites" path="/favorites" />
         <IconLink type="profile" text="Login" path="/profile" />
