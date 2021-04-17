@@ -1,0 +1,51 @@
+.favsPage {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(50deg, #9bc0cc, #ffffff);
+  width: 100%;
+  padding: 20px;
+}
+
+.favsPage_welcome {
+  font-size: 1.5rem;
+  color: #4c4141;
+  font-family: system-ui;
+  font-weight: 600;
+  height: 40px;
+}
+
+.favsPage_container {
+  background-color: #f7fbfd;
+  width: 30%;
+  min-width: 250px;
+  margin: auto;
+  color: rgb(82, 82, 82);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.favsPage_image {
+  height: 40px;
+  width: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.favsPage_container_singleProduct {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+
+.favsPage_removeButton {
+  height: 30px;
+  justify-content: right;
+  align-self: center;
+  display: flex;
+  color: #ed1a3a;
+  opacity: 0.9;
+  background: #f3f6f7;
+  border-radius: 10px;
+}
