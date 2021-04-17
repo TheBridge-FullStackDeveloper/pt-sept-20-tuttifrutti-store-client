@@ -159,28 +159,23 @@ export default function Favs() {
           </div>
         </div>
         <div className="favsPage_container">
-          {favourites.map((element, index) => {
+          {favourites.map((element, id) => {
             return (
-              <div
-                className="favsPage_container_singleProduct"
-                key={element.id}
-              >
+              <div className="favsPage_container_singleProduct" key={id}>
                 <img
                   className="favsPage_image"
                   src={element.pictures[0]}
                   alt={element.productName}
                 ></img>
-                <div key={element.id} className="favsPage_info">
+                <div className="favsPage_info">
                   <div>Product: {element.productName}</div>
                   <div>Price: {element.price}€</div>
                 </div>
                 <button
-                  key={element.id}
                   className="favsPage_removeButton"
                   onClick={() => handleRemoveFavourite(element._id)}
                 >
                   <FontAwesomeIcon
-                    key={element.id}
                     icon={faHeart}
                     className="favsPage_removeButton"
                   />
