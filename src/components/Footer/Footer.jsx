@@ -37,7 +37,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="Footer__listContainer">
-        <ul className="Footer__list">
+        {/* <ul className="Footer__list">
           <li className="listFooterItem">
             <a href="https://www.google.com/">Home</a>
           </li>
@@ -53,7 +53,7 @@ export default function Footer() {
           <li className="listFooterItem">
             <a href="https://www.google.com/">Privacy Policy</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
       <div className="copytightContainer">
         <p className="copyright">Tutti Frutti © 2012</p>

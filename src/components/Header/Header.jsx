@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import frutti from '../../assets/tuttifrutti-2-min.jpg';
+import frutti from '../../assets/logo-final.png';
 import Picture from '../Pictures';
 import IconLink from './IconLink';
 import Search from './Search';

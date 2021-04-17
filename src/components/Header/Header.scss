@@ -5,8 +5,16 @@
 
   justify-content: space-around;
   align-items: center;
-  background-color: #ddd8cc02;
+  background-color: #e2ebef;
   width: 100%;
   height: 90px;
-  border: 2px solid green;
+  position: sticky;
+  top: 0;
+  // flex: 0 0 auto;
+  //display: inline-flex;
+}
+
+img {
+  width: 90px;
+  height: 90px;
 }

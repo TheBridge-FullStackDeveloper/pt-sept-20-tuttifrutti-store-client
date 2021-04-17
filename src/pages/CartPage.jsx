@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+import '../styles/CartPage.scss';
+
+import ProductOptionCard from '../components/ProductOptionCard/ProductOptionCard';
+
 import '../styles/CartPage.scss';
 
 const productSavedMock = [
@@ -30,7 +34,7 @@ const productSavedMock = [
 ];
 
 export default function CartPage() {
-  const [productSaved, setProductSaved] = useState(productSavedMock);
+  const [productSaved, setProductSaved] = useState([]);
 
   // useEffect(() => {
   //     const fecthData = async () => {
@@ -49,16 +53,22 @@ export default function CartPage() {
   }, []);
 
   return (
-    <div>
-      <h3>MI CARRITO</h3>
-
-      <Link className="buttoncart" to="/order">
-        COMPRAR AHORA
-      </Link>
-
+    <div className="cartPage">
+      <h3>My Cart</h3>
       <div>
+        <button>COMPRAR AHORA</button>
+      </div>
+      <div className="productSavedCart">
         {productSaved.map((p) => (
-          <h3 key={p.ref}>{p.productName}</h3>
+          <div key={p.productRef}>
+            <ProductOptionCard
+              picture={p.pictures}
+              name={p.productName}
+              productId={p.productRef}
+              onClickDelete={() => {}}
+              price={p.price}
+            />
+          </div>
         ))}
       </div>
     </div>

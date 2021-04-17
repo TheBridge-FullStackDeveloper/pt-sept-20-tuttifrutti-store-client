@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 
 //import { useContext } from 'react'
 import { useEffect } from 'react';
@@ -8,11 +8,10 @@ import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import '../styles/Favs.scss';
 
-const PORT = 4000;
+//const PORT = 4000;
 const USERMOCK = 'lola';
 
 const RESAPI = {
