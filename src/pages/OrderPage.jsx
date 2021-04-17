@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import '../styles/OrderPage.scss';
+import OrderCard from '../components/Ordercard';
+import '../components/Ordercard/styles.scss';
 
-const OrderProductsMock = [
+const productOrderMock = [
   {
     category: 'alimentos',
     stock: 20,
@@ -14,22 +16,36 @@ const OrderProductsMock = [
     weight: 6,
     weightType: 'kg'
   },
+
   {
-    category: 'bebidas',
+    category: 'turismo',
     stock: 20,
-    productRef: 5676777,
-    productName: 'verduras',
-    brand: 'alcoli',
-    price: 45,
+    productRef: 567444,
+    productName: 'deportivo',
+    brand: 'Ferrari',
+    price: 60,
+    pictures: 'coche',
+    description: 'fast',
+    weight: 1400,
+    weightType: 'kg'
+  },
+
+  {
+    category: 'viaje',
+    stock: 2,
+    productRef: 394774,
+    productName: 'Italia',
+    brand: 'Peroni',
+    price: 200,
     pictures: 'picture',
-    description: 'verdura fresca',
-    weight: 7,
+    description: 'cerveza',
+    weight: 6,
     weightType: 'kg'
   }
 ];
 
 export default function OrderPage() {
-  const [OrderProductSaved, setOrderProductSaved] = useState(OrderProductsMock);
+  const [products, setProducts] = useState([]);
 
   // useEffect(() => {
   //     const fecthData = async () => {
@@ -44,12 +60,25 @@ export default function OrderPage() {
   // }, []);
 
   useEffect(() => {
-    setOrderProductSaved(OrderProductsMock);
+    setProducts(productOrderMock);
   }, []);
 
   return (
     <div>
-      <h3>ORDER</h3>
+      <h3>MI PEDIDO</h3>
+
+      <div className="productList__box">
+        <OrderCard />
+      </div>
+
+      <a
+        className="buttoncart"
+        href="https://www.paypal.com/signin"
+        target="__blank"
+        rel="noopener noreferrer"
+      >
+        PAGAR
+      </a>
     </div>
   );
 }

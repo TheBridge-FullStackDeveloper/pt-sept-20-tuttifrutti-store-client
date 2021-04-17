@@ -5,7 +5,7 @@ import { faSnapchat } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-import './Footer.css';
+import './Footer.scss';
 
 export default function Footer() {
   return (
