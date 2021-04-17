@@ -1,8 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 
 import Category from './pages/Category';
-import CartPage from "./pages/CartPage";
-import Home from "./pages/home"
+import CartPage from './pages/CartPage';
+import Home from './pages/home';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
@@ -63,8 +63,8 @@ const productListMock = [
 function App() {
   return (
     <div className="App">
-        <Header />
-        <NavBar />
+      <Header />
+      <NavBar />
 
       {/* hemos decidido quitar el título  */}
       {/* <Header />
@@ -72,8 +72,8 @@ function App() {
       <Footer /> */}
       <Switch>
         <Route exact path="/">
-          <Home/>
-        
+          <Home />
+
           {/* <ProductList title="product list" productListMock={productListMock} /> */}
         </Route>
         <Route exact path="/search">
@@ -83,7 +83,7 @@ function App() {
         <Route exact path="/favs">
           {/* go to favorites */}
         </Route>
-    
+
         <Route exact path="/cart">
           <CartPage />
         </Route>
@@ -95,12 +95,16 @@ function App() {
         <Route exact path="/profile">
           {/* go to profile */}
         </Route>
-    
+
         <Route path="/login">
           <Login />
         </Route>
-    
+
         <Route exact path="/category/:category">
+          <Category />
+        </Route>
+
+        <Route exact path="/product/:id">
           <Category />
         </Route>
       </Switch>
