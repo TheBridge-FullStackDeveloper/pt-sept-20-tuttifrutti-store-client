@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-import '../styles/Favs.scss';
+import '../styles/Favorites.scss';
 
 //const PORT = 4000;
 const USERMOCK = 'lola';
@@ -107,7 +107,7 @@ const RESAPI = {
   }
 };
 
-export default function Favs() {
+export default function Favorites() {
   //const { user } = useContext(UserContext)
 
   const [favourites, setFavourites] = useState([]);

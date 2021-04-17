@@ -1,4 +1,5 @@
 import ProductCard from '../ProductCard';
+
 import './styles.scss';
 
 const ProductList = ({ title, productListMock }) => {

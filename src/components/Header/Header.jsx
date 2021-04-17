@@ -7,19 +7,20 @@ import './Header.scss';
 
 export default function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <div>
         <Picture picture={frutti} name={frutti} />
       </div>
-      <div>{/* search component */}</div>
+
       <div>
         <Search />
       </div>
+
       <div>
         <IconLink type="cart" text="Add to Cart" path="/cart" />
-        <IconLink type="fav" text="Favourites" path="/fav" />
+        <IconLink type="fav" text="Favourites" path="/favorites" />
         <IconLink type="profile" text="Login" path="/profile" />
       </div>
-    </div>
+    </header>
   );
 }

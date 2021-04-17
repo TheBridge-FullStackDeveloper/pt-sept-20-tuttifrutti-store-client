@@ -24,7 +24,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className="category">
+    <nav className="category">
       <div>
         <ul className="list">
           {categories.map((category, index) => (
@@ -34,6 +34,6 @@ export default function NavBar() {
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 }

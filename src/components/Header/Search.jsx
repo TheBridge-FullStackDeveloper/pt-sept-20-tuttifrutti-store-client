@@ -21,6 +21,7 @@ export default function Search() {
         placeholder="Search a product"
         type="text"
       ></input>
+
       <FontAwesomeIcon
         icon={faSearch}
         className="searchbox__icon searchbox__icon--hover"

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-import '../styles/CartPage.scss';
+import { Link } from 'react-router-dom';
 
 import ProductOptionCard from '../components/ProductOptionCard/ProductOptionCard';
 
@@ -55,9 +54,9 @@ export default function CartPage() {
   return (
     <div className="cartPage">
       <h3>My Cart</h3>
-      <div>
-        <button>COMPRAR AHORA</button>
-      </div>
+
+      <Link to="/order">COMPRAR AHORA</Link>
+
       <div className="productSavedCart">
         {productSaved.map((p) => (
           <div key={p.productRef}>

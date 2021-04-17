@@ -2,7 +2,7 @@
 //import { UserContext } from '../../'
 import { Redirect } from 'react-router-dom';
 
-import Login from '../components/LoginForm/Login';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 const user = 'Pepe';
 
@@ -12,6 +12,7 @@ export default function LoginPage() {
   if (user) {
     return <Redirect to="/profile" />;
   } else {
-    return <Login user={user} />;
+    // TODO: Add more content to complete login view
+    return <LoginForm user={user} />;
   }
 }
