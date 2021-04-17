@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { getSearch } from '../../services/search';
 
 import './Search.scss';
 
@@ -10,6 +11,11 @@ export default function Search() {
 
   const handleChange = (event) => {
     setProduct(event.target.value);
+  };
+
+  const handleClick = async () => {
+    const result = await getSearch(product);
+    console.log(result);
   };
 
   return (
@@ -25,6 +31,7 @@ export default function Search() {
       <FontAwesomeIcon
         icon={faSearch}
         className="searchbox__icon searchbox__icon--hover"
+        onClick={handleClick}
       />
     </div>
   );
