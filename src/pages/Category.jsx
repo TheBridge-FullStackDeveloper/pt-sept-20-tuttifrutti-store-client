@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
-import "../styles/Category.scss";
+import '../styles/Category.scss';
 // import {Link} from "react-router-dom"
 
 // import axios from "axios"
@@ -35,34 +34,31 @@ const productsMock = [
 ];
 
 export default function Category() {
-   
-   
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-    // const {category}= useParams();
-    
+  // const {category}= useParams();
 
-    // useEffect(() => {
-    //     const fecthData = async () => {
-    //         await axios.get(`http://localhost:4000/products/category/${category}`)
-    //             .then(res => {
-    //                 setProducts(res.data);
-                    
-    //                 console.log(category);
-    //             });
-    //     };
-    //     fecthData();
-    // }, []);
+  // useEffect(() => {
+  //     const fecthData = async () => {
+  //         await axios.get(`http://localhost:4000/products/category/${category}`)
+  //             .then(res => {
+  //                 setProducts(res.data);
 
+  //                 console.log(category);
+  //             });
+  //     };
+  //     fecthData();
+  // }, []);
 
-    useEffect(()=>{
-        setProducts(productsMock)
-    },[])
-    
-    return (
-        <div className="product">
-          { products.map((p)=><h3 key={p.productRef}>{p.productName}</h3>) }
-          
-        </div>
-    )
+  useEffect(() => {
+    setProducts(productsMock);
+  }, []);
+
+  return (
+    <div className="product">
+      {products.map((p) => (
+        <h3 key={p.productRef}>{p.productName}</h3>
+      ))}
+    </div>
+  );
 }

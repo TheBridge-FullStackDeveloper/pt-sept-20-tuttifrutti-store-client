@@ -1,9 +1,9 @@
 // import { Link } from "react-router-dom";
-import frutti from "../../assets/logo-final.png";
-import Picture from "../Pictures";
-import IconLink from "./IconLink"
-import Search from "./Search"
-import "./Header.scss";
+import frutti from '../../assets/logo-final.png';
+import Picture from '../Pictures';
+import IconLink from './IconLink';
+import Search from './Search';
+import './Header.scss';
 
 export default function Header() {
   return (
@@ -11,6 +11,7 @@ export default function Header() {
       <div>
         <Picture picture={frutti} name={frutti} />
       </div>
+      <div>{/* search component */}</div>
       <div>
         <Search />
       </div>

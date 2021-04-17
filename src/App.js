@@ -1,17 +1,27 @@
 import { Route, Switch } from 'react-router-dom';
 
 import Category from './pages/Category';
-import CartPage from "./pages/CartPage";
-import Home from "./pages/home"
+import CartPage from './pages/CartPage';
+import Home from './pages/home';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
 import ProductList from './components/ProductList/index';
-
 import OrderPage from './pages/OrderPage';
-import Login from './components/LoginForm/Login';
+import LoginPage from './pages/Login';
+import Favs from './pages/Favs';
 
 import './App.css';
+
+const cardprops = {
+  productName: 'pineapple',
+  picture:
+    'https://www.complementosdelcafe.com/1784-large_default/acme-taza-verde-flat-white-150ml.jpg',
+  price: 1,
+  description:
+    'Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.',
+  brand: 'tropical'
+};
 
 const productListMock = [
   {
@@ -63,8 +73,8 @@ const productListMock = [
 function App() {
   return (
     <div className="App">
-        <Header />
-        <NavBar />
+      <Header />
+      <NavBar />
 
       {/* hemos decidido quitar el título  */}
       {/* <Header />
@@ -72,8 +82,8 @@ function App() {
       <Footer /> */}
       <Switch>
         <Route exact path="/">
-          <Home/>
-        
+          <Home />
+
           {/* <ProductList title="product list" productListMock={productListMock} /> */}
         </Route>
         <Route exact path="/search">
@@ -81,9 +91,9 @@ function App() {
         </Route>
 
         <Route exact path="/favs">
-          {/* go to favorites */}
+          <Favs />
         </Route>
-    
+
         <Route exact path="/cart">
           <CartPage />
         </Route>
@@ -95,11 +105,11 @@ function App() {
         <Route exact path="/profile">
           {/* go to profile */}
         </Route>
-    
+
         <Route path="/login">
-          <Login />
+          <LoginPage />
         </Route>
-    
+
         <Route exact path="/category/:category">
           <Category />
         </Route>

@@ -39,19 +39,19 @@ export default function Footer() {
       <div className="Footer__listContainer">
         {/* <ul className="Footer__list">
           <li className="listFooterItem">
-            <a href="#">Home</a>
+            <a href="https://www.google.com/">Home</a>
           </li>
           <li className="listFooterItem">
-            <a href="#">Services</a>
+            <a href="https://www.google.com/">Services</a>
           </li>
           <li className="listFooterItem">
-            <a href="#">About</a>
+            <a href="https://www.google.com/">About</a>
           </li>
           <li className="listFooterItem">
-            <a href="#">Terms</a>
+            <a href="https://www.google.com/">Terms</a>
           </li>
           <li className="listFooterItem">
-            <a href="#">Privacy Policy</a>
+            <a href="https://www.google.com/">Privacy Policy</a>
           </li>
         </ul> */}
       </div>

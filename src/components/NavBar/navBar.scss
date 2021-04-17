@@ -1,15 +1,15 @@
 .category {
   background-color: #e65b5f;
-  color:#f3f6f7;
+  color: #f3f6f7;
   width: 100%;
   height: 50px;
   position: sticky;
   top: 0;
 }
-.list{
+.list {
   display: flex;
   flex-direction: row;
-   align-items: center;
+  align-items: center;
 
   padding: 10px;
   border: 2px solid green;
