@@ -6,7 +6,6 @@ import Home from './pages/home';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Footer from './components/Footer/Footer';
-import ProductList from './components/ProductList/index';
 import OrderPage from './pages/OrderPage';
 import LoginPage from './pages/Login';
 import Favorites from './pages/Favorites';
@@ -60,20 +59,17 @@ function App() {
             {/* go to profile */}
           </Route>
 
-
           <Route path="/login">
             <LoginPage />
           </Route>
 
-
           <Route exact path="/category/:category">
             <Category />
           </Route>
-    
-          <Route exact path="/product/:id">
+
+          <Route exact path="/products">
             <ProductPage />
           </Route>
-    
         </Switch>
       </div>
 

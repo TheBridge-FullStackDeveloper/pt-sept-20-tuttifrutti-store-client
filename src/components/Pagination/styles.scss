@@ -1,0 +1,20 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__pageLink {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
+      color: rgb(169 169 169);
+      background-color: rgba(47, 48, 49, 0.213);
+    }
+    &:focus {
+      background-color: rgba(47, 48, 49, 0.213);
+    }
+  }
+}
