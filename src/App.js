@@ -10,6 +10,7 @@ import ProductList from './components/ProductList/index';
 import OrderPage from './pages/OrderPage';
 import LoginPage from './pages/Login';
 import Favorites from './pages/Favorites';
+import Register from './components/Register/Register';
 
 import './App.css';
 
@@ -29,10 +30,6 @@ function App() {
       <Header />
       <NavBar />
 
-      {/* hemos decidido quitar el título  */}
-      {/* <Header />
-      <NavBar />
-      <Footer /> */}
       <div className="main">
         <Switch>
           <Route exact path="/">
@@ -56,6 +53,7 @@ function App() {
 
           <Route exact path="/profile">
             {/* go to profile */}
+            <Register />
           </Route>
 
           <Route path="/login">
@@ -69,8 +67,6 @@ function App() {
       </div>
 
       <Footer />
-
-      {/* <Footer /> */}
     </div>
   );
 }
