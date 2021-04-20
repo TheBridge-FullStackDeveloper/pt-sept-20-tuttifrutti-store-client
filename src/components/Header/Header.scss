@@ -10,6 +10,12 @@
   height: 90px;
   position: fixed;
   top: 0;
+
+  &__icons {
+    @extend .flex-global;
+    width: 120px;
+    justify-content: space-between;
+  }
 }
 
 img {

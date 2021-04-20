@@ -24,6 +24,7 @@ export default function Search() {
 
       <FontAwesomeIcon
         icon={faSearch}
+        size="2x"
         className="searchbox__icon searchbox__icon--hover"
       />
     </div>

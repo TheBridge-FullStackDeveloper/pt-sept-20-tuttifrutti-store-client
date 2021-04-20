@@ -11,6 +11,7 @@ import OrderPage from './pages/OrderPage';
 import LoginPage from './pages/Login';
 import Favorites from './pages/Favorites';
 import Register from './components/Register/Register';
+import ProductPage from './pages/ProductPage';
 
 import './App.css';
 
@@ -29,7 +30,7 @@ function App() {
     <div className="App">
       <Header />
       <NavBar />
-
+    
       <div className="main">
         <Switch>
           <Route exact path="/">
@@ -56,13 +57,20 @@ function App() {
             <Register />
           </Route>
 
+
           <Route path="/login">
             <LoginPage />
           </Route>
 
+
           <Route exact path="/category/:category">
             <Category />
           </Route>
+    
+          <Route exact path="/product/:id">
+            <ProductPage />
+          </Route>
+    
         </Switch>
       </div>
 
