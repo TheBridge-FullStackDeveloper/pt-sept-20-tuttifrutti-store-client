@@ -1,13 +1,10 @@
 //import axios from 'axios';
-
-//import { useContext } from 'react'
-import { useEffect } from 'react';
-//import { UserContext } from '../../'
+import { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
-import { useState } from 'react';
-
+import { UserContext } from '../context/User';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 import '../styles/Favorites.scss';
 
@@ -108,9 +105,8 @@ const RESAPI = {
 };
 
 export default function Favorites() {
-  //const { user } = useContext(UserContext)
-
   const [favourites, setFavourites] = useState([]);
+  const { user } = useContext(UserContext);
 
   // const fetchFavourites = async () => {
   //   await axios.get(`http://localhost:${PORT}/api/favorites/all`).then((res) => {
@@ -147,43 +143,48 @@ export default function Favorites() {
     setFavourites(RESAPI.data.products);
   }, [USERMOCK]);
 
-  if (!USERMOCK) {
-    return <Redirect to="/" />;
-  } else {
-    return (
-      <div className="favsPage">
-        <div>
-          <div className="favsPage_welcome">
-            Welcome to your favourites {USERMOCK} 😎!
+  if (user) {
+    if (!USERMOCK) {
+      return <Redirect to="/" />;
+    } else {
+      return (
+        <div className="favsPage">
+          <div>
+            <div className="favsPage_welcome">
+              Welcome to your favourites {USERMOCK} 😎!
+            </div>
+          </div>
+          <div className="favsPage_container">
+            {favourites.map((element, id) => {
+              return (
+                <div className="favsPage_container_singleProduct" key={id}>
+                  <img
+                    className="favsPage_image"
+                    src={element.pictures[0]}
+                    alt={element.productName}
+                  ></img>
+                  <div className="favsPage_info">
+                    <div>Product: {element.productName}</div>
+                    <div>Price: {element.price}€</div>
+                  </div>
+                  <button
+                    className="favsPage_removeButton"
+                    onClick={() => handleRemoveFavourite(element._id)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className="favsPage_removeButton"
+                    />
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
-        <div className="favsPage_container">
-          {favourites.map((element, id) => {
-            return (
-              <div className="favsPage_container_singleProduct" key={id}>
-                <img
-                  className="favsPage_image"
-                  src={element.pictures[0]}
-                  alt={element.productName}
-                ></img>
-                <div className="favsPage_info">
-                  <div>Product: {element.productName}</div>
-                  <div>Price: {element.price}€</div>
-                </div>
-                <button
-                  className="favsPage_removeButton"
-                  onClick={() => handleRemoveFavourite(element._id)}
-                >
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    className="favsPage_removeButton"
-                  />
-                </button>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
+      );
+    }
+  } else {
+    // TODO: Add more content to complete login view
+    return <LoginForm user={user} />;
   }
 }

@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
+import { UserContext } from '../context/User';
 import '../styles/OrderPage.scss';
 import OrderCard from '../components/Ordercard';
 import '../components/Ordercard/styles.scss';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 const productOrderMock = [
   {
@@ -46,6 +49,7 @@ const productOrderMock = [
 
 export default function OrderPage() {
   const [products, setProducts] = useState([]);
+  const { user } = useContext(UserContext);
 
   // useEffect(() => {
   //     const fecthData = async () => {
@@ -63,22 +67,27 @@ export default function OrderPage() {
     setProducts(productOrderMock);
   }, []);
 
-  return (
-    <div>
-      <h3>MI PEDIDO</h3>
+  if (user) {
+    return (
+      <div>
+        <h3>MI PEDIDO</h3>
 
-      <div className="productList__box">
-        <OrderCard />
+        <div className="productList__box">
+          <OrderCard />
+        </div>
+
+        <a
+          className="buttoncart"
+          href="https://www.paypal.com/signin"
+          target="__blank"
+          rel="noopener noreferrer"
+        >
+          PAGAR
+        </a>
       </div>
-
-      <a
-        className="buttoncart"
-        href="https://www.paypal.com/signin"
-        target="__blank"
-        rel="noopener noreferrer"
-      >
-        PAGAR
-      </a>
-    </div>
-  );
+    );
+  } else {
+    // TODO: Add more content to complete login view
+    return <LoginForm user={user} />;
+  }
 }
