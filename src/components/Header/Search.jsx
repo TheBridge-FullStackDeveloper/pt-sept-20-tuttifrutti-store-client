@@ -4,12 +4,19 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.scss';
 
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function Search() {
+  const history = useHistory();
   const [product, setProduct] = useState('');
 
   const handleChange = (event) => {
     setProduct(event.target.value);
+  };
+
+  const handleClick = async () => {
+    // const result = await getSearch(product);
+    history.push(`/search?name=${product}`);
   };
 
   return (
@@ -26,6 +33,7 @@ export default function Search() {
         icon={faSearch}
         size="2x"
         className="searchbox__icon searchbox__icon--hover"
+        onClick={handleClick}
       />
     </div>
   );

@@ -16,6 +16,7 @@ const ProductList = ({ title, productList, onClick, isFetching, hasMore }) => {
             return <ProductCard key={index} {...card} />;
           }
         })}
+
       </div>
       {isFetching && <p>Loading more products...</p>}
       {!isFetching && hasMore && <button onClick={onClick}>Load more</button>}
