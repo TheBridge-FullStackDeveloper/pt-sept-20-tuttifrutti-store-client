@@ -16,7 +16,7 @@ export default function Search() {
 
   const handleClick = async () => {
     // const result = await getSearch(product);
-    history.push(`search?name=${product}`);
+    history.push(`/search?name=${product}`);
   };
 
   return (
