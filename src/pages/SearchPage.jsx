@@ -14,10 +14,10 @@ export default function SearchPage() {
   useEffect(() => {
     getSearch(name)
       .then((res) => {
-        setProducts(Array.from(res));
-        setLoading(false);
+        setProducts(res);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(setLoading(false));
   }, [name]);
 
   return (
