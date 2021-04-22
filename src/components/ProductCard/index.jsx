@@ -8,7 +8,7 @@ import './styles.scss';
 
 export default function ProductCard({
   productName,
-  picture,
+  pictures,
   price,
   description,
   brand
@@ -33,7 +33,7 @@ export default function ProductCard({
         <div>
           <Picture
             className="productCard__cardImg"
-            picture={picture}
+            picture={pictures[0]}
             name={productName}
           />
         </div>

@@ -14,6 +14,7 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Register from './components/Register/Register';
 import ProductList from './components/ProductList/index';
+import SearchPage from './pages/SearchPage';
 
 import './App.css';
 
@@ -33,7 +34,7 @@ function App() {
             </Route>
 
             <Route exact path="/search">
-              {/* search component */}
+              <SearchPage />
             </Route>
 
             <Route exact path="/favorites">

@@ -9,10 +9,8 @@ export default function NavBar() {
   useEffect(() => {
     axios.get('http://localhost:4000/api/categories').then((res) => {
       setCategories(res.data.data);
-
-      console.log(categories);
     });
-  });
+  }, []);
 
   return (
     <nav className="category">
