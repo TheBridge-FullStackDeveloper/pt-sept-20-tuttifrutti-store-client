@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../context/User';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 import ProductOptionCard from '../components/ProductOptionCard/ProductOptionCard';
 
@@ -34,42 +36,35 @@ const productSavedMock = [
 
 export default function CartPage() {
   const [productSaved, setProductSaved] = useState([]);
-
-  // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get("http://localhost:4000/products/cart")
-  //             .then(res => {
-  //                 setCategories(res.data);
-
-  //                 console.log(productSaved);
-  //             });
-  //     };
-  //      fecthData();
-  // }, []);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     setProductSaved(productSavedMock);
   }, []);
 
-  return (
-    <div className="cartPage">
-      <h3>My Cart</h3>
+  if (user) {
+    return (
+      <div className="cartPage">
+        <h3>My Cart</h3>
 
-      <Link to="/order">COMPRAR AHORA</Link>
+        <Link to="/order">COMPRAR AHORA</Link>
 
-      <div className="productSavedCart">
-        {productSaved.map((p) => (
-          <div key={p.productRef}>
-            <ProductOptionCard
-              picture={p.pictures}
-              name={p.productName}
-              productId={p.productRef}
-              onClickDelete={() => {}}
-              price={p.price}
-            />
-          </div>
-        ))}
+        <div className="productSavedCart">
+          {productSaved.map((p) => (
+            <div key={p.productRef}>
+              <ProductOptionCard
+                picture={p.pictures}
+                name={p.productName}
+                productId={p.productRef}
+                onClickDelete={() => {}}
+                price={p.price}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <LoginForm />;
+  }
 }
