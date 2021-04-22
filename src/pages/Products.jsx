@@ -15,8 +15,6 @@ export default function Products() {
     loadMoreBeers();
   }, []);
 
-  console.log(productsList);
-
   function loadMoreBeers() {
     setIsFetching(true);
 
