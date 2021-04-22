@@ -7,10 +7,12 @@ import Favorites from './pages/Favorites';
 import Home from './pages/home';
 import LoginPage from './pages/Login';
 import OrderPage from './pages/OrderPage';
+import ProductPage from './pages/ProductPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ProductList from './components/ProductList/index';
+import Register from './components/Register/Register';
 
 import './App.css';
 
@@ -59,6 +61,10 @@ function App() {
 
             <Route exact path="/category/:category">
               <Category />
+            </Route>
+
+            <Route exact path="/product/:id">
+              <ProductPage />
             </Route>
           </Switch>
         </div>

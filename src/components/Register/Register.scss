@@ -1,0 +1,69 @@
+:root {
+  --color--input: #e2ebef;
+  --color-gray-background: rgb(82, 82, 82);
+}
+h3 {
+  color: var(--color-gray-background);
+  padding: 10px;
+}
+.formPage {
+  background: linear-gradient(50deg, #9bc0cc, #ffffff);
+  padding: 10px;
+}
+form {
+  width: 400px;
+  margin: 0 auto;
+  height: auto;
+  padding: 15px;
+  background-color: var(--color-gray-background);
+  border-radius: 5px;
+}
+
+input {
+  background-color: var(--color--input);
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: var(--color--input);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+button[type='submit'] {
+  color: var(--color-gray-background);
+  background-color: var(--color--input);
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 5px;
+}
+
+input[id='monthExpirationDate'] {
+  background-color: var(--color--input);
+  width: auto;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+input[id='yearExpirationDate'] {
+  background-color: var(--color--input);
+  width: auto;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}

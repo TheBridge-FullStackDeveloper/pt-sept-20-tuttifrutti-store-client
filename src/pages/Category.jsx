@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Category.scss';
 // import {Link} from "react-router-dom"
 
-// import axios from "axios"
-//import { useParams } from 'react-router';
+import axios from 'axios';
+import { useParams } from 'react-router';
 
 const productsMock = [
   {
@@ -36,23 +36,21 @@ const productsMock = [
 export default function Category() {
   const [products, setProducts] = useState([]);
 
-  // const {category}= useParams();
-
-  // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get(`http://localhost:4000/products/category/${category}`)
-  //             .then(res => {
-  //                 setProducts(res.data);
-
-  //                 console.log(category);
-  //             });
-  //     };
-  //     fecthData();
-  // }, []);
+  const { category } = useParams();
 
   useEffect(() => {
-    setProducts(productsMock);
-  }, []);
+    axios
+      .get(`http://localhost:4000/api/products/category/?category=${category}`)
+      .then((res) => {
+        setProducts(res.data.data);
+
+        console.log(category);
+      });
+  });
+
+  // useEffect(() => {
+  //   setProducts(productsMock);
+  // }, []);
 
   return (
     <div className="product">
