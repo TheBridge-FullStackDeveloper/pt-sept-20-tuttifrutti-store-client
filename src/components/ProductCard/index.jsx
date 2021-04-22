@@ -7,7 +7,7 @@ import './styles.scss';
 
 export default function ProductCard({
   productName,
-  picture,
+  pictures,
   price,
   description,
   brand
@@ -29,7 +29,7 @@ export default function ProductCard({
     <section className="productCard">
       {/* {pictures.map((element, index)=> <img key={index}src={element} alt={element}/> )} para varias img */}
 
-      <img className="productCard__cardImg" src={picture} alt={productName} />
+      <img className="productCard__cardImg" src={pictures} alt={productName} />
 
       <h3 className="productCard__title">{productName}</h3>
       <p className="productCard__cardBrand">{brand}</p>

@@ -13,6 +13,7 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ProductList from './components/ProductList/index';
 import Register from './components/Register/Register';
+import Products from './pages/Products';
 
 import './App.css';
 
@@ -45,6 +46,10 @@ function App() {
 
             <Route exact path="/list">
               <ProductList />
+            </Route>
+
+            <Route exact path="/products">
+              <Products />
             </Route>
 
             <Route exact path="/order">
