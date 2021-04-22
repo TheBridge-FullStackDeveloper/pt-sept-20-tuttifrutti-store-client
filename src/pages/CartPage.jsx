@@ -38,18 +38,6 @@ export default function CartPage() {
   const [productSaved, setProductSaved] = useState([]);
   const { user } = useContext(UserContext);
 
-  // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get("http://localhost:4000/products/cart")
-  //             .then(res => {
-  //                 setCategories(res.data);
-
-  //                 console.log(productSaved);
-  //             });
-  //     };
-  //      fecthData();
-  // }, []);
-
   useEffect(() => {
     setProductSaved(productSavedMock);
   }, []);
@@ -77,7 +65,6 @@ export default function CartPage() {
       </div>
     );
   } else {
-    // TODO: Add more content to complete login view
-    return <LoginForm user={user} />;
+    return <LoginForm />;
   }
 }

@@ -8,9 +8,6 @@ import LoginForm from '../components/LoginForm/LoginForm';
 
 import '../styles/Favorites.scss';
 
-//const PORT = 4000;
-const USERMOCK = 'lola';
-
 const RESAPI = {
   success: true,
   count: 4,
@@ -139,52 +136,49 @@ export default function Favorites() {
   };
 
   useEffect(() => {
-    //fetchFavourites();
-    setFavourites(RESAPI.data.products);
-  }, [USERMOCK]);
+    if (user) {
+      //fetchFavourites();
+      setFavourites(RESAPI.data.products);
+    }
+  }, [user]);
 
-  if (user) {
-    if (!USERMOCK) {
-      return <Redirect to="/" />;
-    } else {
-      return (
-        <div className="favsPage">
-          <div>
-            <div className="favsPage_welcome">
-              Welcome to your favourites {USERMOCK} 😎!
-            </div>
-          </div>
-          <div className="favsPage_container">
-            {favourites.map((element, id) => {
-              return (
-                <div className="favsPage_container_singleProduct" key={id}>
-                  <img
-                    className="favsPage_image"
-                    src={element.pictures[0]}
-                    alt={element.productName}
-                  ></img>
-                  <div className="favsPage_info">
-                    <div>Product: {element.productName}</div>
-                    <div>Price: {element.price}€</div>
-                  </div>
-                  <button
-                    className="favsPage_removeButton"
-                    onClick={() => handleRemoveFavourite(element._id)}
-                  >
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className="favsPage_removeButton"
-                    />
-                  </button>
-                </div>
-              );
-            })}
+  if (!user) {
+    return <LoginForm />;
+  } else {
+    return (
+      <div className="favsPage">
+        <div>
+          <div className="favsPage_welcome">
+            Welcome to your favourites {user.name || user.email} 😎!
           </div>
         </div>
-      );
-    }
-  } else {
-    // TODO: Add more content to complete login view
-    return <LoginForm user={user} />;
+        <div className="favsPage_container">
+          {favourites.map((element, id) => {
+            return (
+              <div className="favsPage_container_singleProduct" key={id}>
+                <img
+                  className="favsPage_image"
+                  src={element.pictures[0]}
+                  alt={element.productName}
+                ></img>
+                <div className="favsPage_info">
+                  <div>Product: {element.productName}</div>
+                  <div>Price: {element.price}€</div>
+                </div>
+                <button
+                  className="favsPage_removeButton"
+                  onClick={() => handleRemoveFavourite(element._id)}
+                >
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    className="favsPage_removeButton"
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
   }
 }
