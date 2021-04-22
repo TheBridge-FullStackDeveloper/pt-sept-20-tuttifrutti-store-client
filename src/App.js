@@ -14,10 +14,6 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Register from './components/Register/Register';
 import ProductList from './components/ProductList/index';
-import OrderPage from './pages/OrderPage';
-import LoginPage from './pages/Login';
-import Favorites from './pages/Favorites';
-import ProductPage from './pages/ProductPage';
 import SearchPage from './pages/SearchPage';
 
 import './App.css';
