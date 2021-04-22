@@ -5,19 +5,16 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  background-color: #ddd8cc;
   width: 100%;
   height: auto;
-  border: 2px solid red;
+  background-color: #e2ebef;
 
   &__productListTitle {
-    border: 2px solid blue;
     border-radius: 5px;
     font-size: 20px;
     margin: 0;
     color: white;
     text-transform: capitalize;
-    background-color: green;
     margin: 15px;
   }
   &__box {
@@ -25,6 +22,7 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
+    padding: 15px;
   }
 }
 

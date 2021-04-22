@@ -13,8 +13,8 @@ export default function LoginForm() {
 
   return (
     <>
-      <h3>Welcome to the Tutti-Frutti Store</h3>
-      <h6>Please login with your credentials</h6>
+      <h2>Welcome</h2>
+      <h4>Sign In</h4>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <label htmlFor="email">Email</label>
         <input

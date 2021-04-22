@@ -55,14 +55,14 @@ const productList = [
 
 export default function Home() {
   return (
-    <main className="homePage">
-      <div className="main">
+    <div className="main">
+      <div>
         <Hero />
-
-        <ProductList title="Destacados" productList={productList} />
-
-        <ProductList title="Promociones" productList={productList} />
       </div>
-    </main>
+
+      <ProductList title="Destacados" productList={productList} />
+
+      <ProductList title="Promociones" productList={productList} />
+    </div>
   );
 }

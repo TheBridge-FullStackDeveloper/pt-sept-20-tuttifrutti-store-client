@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from 'react';
+import { getShortProfile, postLogin } from '../services/auth';
+
+export const UserContext = React.createContext(null);
+
+export function useUser() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getShortProfile()
+      .then((id) => {
+        setUser({ id });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  async function login(email, password) {
+    postLogin(email, password).then((email) => {
+      if (email) {
+        setUser({ ...(user || {}), email });
+      }
+    });
+  }
+
+  return { user, loading, login };
+}

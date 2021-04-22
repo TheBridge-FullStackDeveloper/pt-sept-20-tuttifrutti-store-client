@@ -2,26 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.scss';
 
-// import axios from "axios"
-
-const categoriesMock = [{ name: 'alimentos' }, { name: 'bebidas' }];
+import axios from 'axios';
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
-  // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get("http://localhost:4000/products/categories")
-  //             .then(res => {
-  //                 setCategories(res.data);
-
-  //                 console.log(categories);
-  //             });
-  //     };
-  //      fecthData();
-  // }, []);
   useEffect(() => {
-    setCategories(categoriesMock);
-  }, []);
+    axios.get('http://localhost:4000/api/categories').then((res) => {
+      setCategories(res.data.data);
+
+      console.log(categories);
+    });
+  });
 
   return (
     <nav className="category">
@@ -29,7 +20,7 @@ export default function NavBar() {
         <ul className="list">
           {categories.map((category, index) => (
             <li key={index}>
-              <Link to={`/category/${category.name}`}>{category.name}</Link>
+              <Link to={`/category/${category}`}>{category}</Link>
             </li>
           ))}
         </ul>

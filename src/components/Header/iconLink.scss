@@ -1,13 +1,9 @@
-// .iconBox{
-//   display: flex;
-//   justify-content: space-between;
-//   flex-direction: row;
-
-//   // margin: 10px;
-//   min-width: 80px;
-//   border: 2px solid yellow;
-
-// }
+.iconBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  min-width: 80px;
+}
 
 .iconlink {
   border-radius: 50%;
@@ -17,11 +13,10 @@
   justify-content: center;
   display: flex;
   transition: box-shadow 0.3s;
-  border: 1px solid red;
 
   &__icon {
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 30px;
     color: lightgray;
   }
 
