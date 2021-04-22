@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { getSearch } from '../../services/search';
 
 import './Search.scss';
 
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function Search() {
+  const history = useHistory();
   const [product, setProduct] = useState('');
 
   const handleChange = (event) => {
@@ -14,8 +15,8 @@ export default function Search() {
   };
 
   const handleClick = async () => {
-    const result = await getSearch(product);
-    console.log(result);
+    // const result = await getSearch(product);
+    history.push(`search?name=${product}`);
   };
 
   return (

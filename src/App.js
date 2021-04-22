@@ -11,6 +11,7 @@ import OrderPage from './pages/OrderPage';
 import LoginPage from './pages/Login';
 import Favorites from './pages/Favorites';
 import ProductPage from './pages/ProductPage';
+import SearchPage from './pages/SearchPage';
 
 import './App.css';
 
@@ -42,6 +43,7 @@ function App() {
           </Route>
           <Route exact path="/search">
             {/* search component */}
+            <SearchPage />
           </Route>
 
           <Route exact path="/favorites">
@@ -60,20 +62,17 @@ function App() {
             {/* go to profile */}
           </Route>
 
-
           <Route path="/login">
             <LoginPage />
           </Route>
 
-
           <Route exact path="/category/:category">
             <Category />
           </Route>
-    
+
           <Route exact path="/product/:id">
             <ProductPage />
           </Route>
-    
         </Switch>
       </div>
 
