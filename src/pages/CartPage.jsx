@@ -36,15 +36,14 @@ export default function CartPage() {
   const [productSaved, setProductSaved] = useState([]);
 
   // useEffect(() => {
-  //     const fecthData = async () => {
-  //         await axios.get("http://localhost:4000/products/cart")
+  //
+  //         axios.get("http://localhost:4000/api/products/cart")
   //             .then(res => {
   //                 setCategories(res.data);
 
   //                 console.log(productSaved);
   //             });
-  //     };
-  //      fecthData();
+  //
   // }, []);
 
   useEffect(() => {

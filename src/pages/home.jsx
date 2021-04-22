@@ -52,14 +52,18 @@ const productListMock = [
 
 export default function Home() {
   return (
-    <main className="homePage">
-      <div className="main">
+    <div className="main">
+      <div>
         <Hero />
+      </div>
 
+      <div>
         <ProductList title="Destacados" productListMock={productListMock} />
+      </div>
 
+      <div>
         <ProductList title="Promociones" productListMock={productListMock} />
       </div>
-    </main>
+    </div>
   );
 }

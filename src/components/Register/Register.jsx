@@ -25,8 +25,8 @@ export default function Register() {
   return (
     <div className="formPage">
       <div className="form">
-        <h3>Welcome to the Tutti-Frutti Store</h3>
-
+        <h1>Welcome</h1>
+        <h4>Create Your Tutti.Frutti Account</h4>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
           <label>Name (*)</label>
           <input

@@ -2,9 +2,11 @@
   --color--input: #e2ebef;
   --color-gray-background: rgb(82, 82, 82);
 }
-h3 {
+h1 {
   color: var(--color-gray-background);
-  padding: 10px;
+}
+h4 {
+  color: var(--color-gray-background);
 }
 .formPage {
   background: linear-gradient(50deg, #9bc0cc, #ffffff);
