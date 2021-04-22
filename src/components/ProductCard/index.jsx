@@ -39,11 +39,6 @@ export default function ProductCard({
         </div>
         <div className="productCard__title">{productName}</div>
 
-        <img
-          className="productCard__cardImg"
-          src={pictures[0]}
-          alt={productName}
-        />
         <div className="productCard__cardBrand">{brand}</div>
 
         <div className="productCard__price">
