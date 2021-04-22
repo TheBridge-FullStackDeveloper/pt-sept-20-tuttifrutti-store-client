@@ -1,18 +1,12 @@
 //import axios from 'axios';
-
-//import { useContext } from 'react'
-import { useEffect } from 'react';
-//import { UserContext } from '../../'
+import { useEffect, useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
-import { useState } from 'react';
-
+import { UserContext } from '../context/User';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import LoginForm from '../components/LoginForm/LoginForm';
 
 import '../styles/Favorites.scss';
-
-//const PORT = 4000;
-const USERMOCK = 'lola';
 
 const RESAPI = {
   success: true,
@@ -108,9 +102,8 @@ const RESAPI = {
 };
 
 export default function Favorites() {
-  //const { user } = useContext(UserContext)
-
   const [favourites, setFavourites] = useState([]);
+  const { user } = useContext(UserContext);
 
   // const fetchFavourites = async () => {
   //   await axios.get(`http://localhost:${PORT}/api/favorites/all`).then((res) => {
@@ -143,18 +136,20 @@ export default function Favorites() {
   };
 
   useEffect(() => {
-    //fetchFavourites();
-    setFavourites(RESAPI.data.products);
-  }, [USERMOCK]);
+    if (user) {
+      //fetchFavourites();
+      setFavourites(RESAPI.data.products);
+    }
+  }, [user]);
 
-  if (!USERMOCK) {
-    return <Redirect to="/" />;
+  if (!user) {
+    return <LoginForm />;
   } else {
     return (
       <div className="favsPage">
         <div>
           <div className="favsPage_welcome">
-            Welcome to your favourites {USERMOCK} 😎!
+            Welcome to your favourites {user.name || user.email} 😎!
           </div>
         </div>
         <div className="favsPage_container">
