@@ -4,15 +4,6 @@ import './navBar.scss';
 
 import axios from 'axios';
 
-const categoriesMock = [
-  { name: 'alimentos' },
-  { name: 'bebidas' },
-  { name: 'alimentos' },
-  { name: 'bebidas' },
-  { name: 'alimentos' },
-  { name: 'bebidas' }
-];
-
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -22,10 +13,6 @@ export default function NavBar() {
       console.log(categories);
     });
   });
-
-  // useEffect(() => {
-  //   setCategories(categoriesMock);
-  // }, []);
 
   return (
     <nav className="category">

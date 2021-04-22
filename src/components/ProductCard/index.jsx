@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Picture from '../Pictures';
 import axios from 'axios';
 
 import Button from '../Button';
@@ -14,35 +15,48 @@ export default function ProductCard({
 }) {
   const [product, setProduct] = useState([]);
 
-  // function handleAddToCart(){
+  function handleAddToCart() {
+    axios
+      .put(
+        `http://localhost:4000/api/cart/add/${product.productId}?quantity=X`,
+        product
+      )
+      .then((res) => {
+        setProduct(res.product);
 
-  //
-  //        axios.put(`http://localhost:4000/api/cart/add/:productId?quantity=X`, product)
-  //             .then(res => {
-  //                 setProduct(res.product);
-
-  //                 console.log(res.product);
-  //             });
-
-  // }
+        console.log(res.product);
+      });
+  }
   return (
-    <section className="productCard">
-      {/* {pictures.map((element, index)=> <img key={index}src={element} alt={element}/> )} para varias img */}
+    <div classname="homePage">
+      <div className="productCard">
+        <div>
+          <Picture
+            className="productCard__cardImg"
+            picture={picture}
+            name={productName}
+          />
+        </div>
+        <div className="productCard__title">{productName}</div>
 
-      <img className="productCard__cardImg" src={picture} alt={productName} />
+        <div className="productCard__cardBrand">{brand}</div>
 
-      <h3 className="productCard__title">{productName}</h3>
-      <p className="productCard__cardBrand">{brand}</p>
+        <div className="productCard__price">
+          {price}
+          <span>€</span>
+        </div>
 
-      <p className="productCard__cardPrice">
-        {price}
-        <span>€</span>
-      </p>
-      {/* TODO: FALTA LOG CONVERSION MONEDA */}
+        {/* TODO: FALTA LOG CONVERSION MONEDA */}
+        <div className="productCard__cardDescription">{description}</div>
 
-      <p className="productCard__cardDescription">{description}</p>
-
-      {/* <Button onClick={handleAddToCart} text="Add to Cart"/> */}
-    </section>
+        <div>
+          <Button
+            className="productCard__button"
+            onClick={handleAddToCart}
+            text="Add to Cart"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
