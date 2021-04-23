@@ -12,8 +12,8 @@ export default function Profile() {
 
   return (
     <div className="profilePage">
-      {user ? (
-        <div classname="profile">
+      {user.email ? (
+        <div className="profile">
           <Button
             text="Logout"
             onClick={userLogout}
@@ -21,7 +21,7 @@ export default function Profile() {
           />
         </div>
       ) : (
-        <div classname="profile">
+        <div className="profile">
           <div>
             <LoginForm />
           </div>

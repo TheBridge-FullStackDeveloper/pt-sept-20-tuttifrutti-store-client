@@ -16,7 +16,7 @@ export default function Category() {
       .then((res) => {
         setProducts(res.data.data);
       });
-  });
+  }, [category]);
 
   return (
     <div className="product">

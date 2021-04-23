@@ -19,6 +19,7 @@ export function useUser() {
 
   async function login(email, password) {
     postLogin(email, password).then((email) => {
+      console.log(email);
       if (email) {
         setUser({ ...(user || {}), email });
       }
