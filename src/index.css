@@ -4,7 +4,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 100px auto;
+  margin: 0;
+  margin-top: 100px;
   padding: 0;
 }
 

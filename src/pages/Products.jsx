@@ -3,13 +3,13 @@ import axios from 'axios';
 
 import ProductList from '../components/ProductList/index';
 
-const BASE_URL = 'http://localhost:4000/api/products/';
+const BASE_URL = 'http://localhost:4000/api';
+const INIT_URL = '/products?page=1';
 
 export default function Products() {
   const [productsList, setProductList] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
-  const [page, setPage] = useState(1);
-  const [moreProducts, setMoreProducts] = useState(true);
+  const [nextPage, setNextPage] = useState(null);
 
   useEffect(() => {
     loadMoreProducts();
@@ -19,30 +19,35 @@ export default function Products() {
     setIsFetching(true);
 
     axios
-      .get(BASE_URL, {
-        params: { page: page }
-      })
+      .get(BASE_URL + (nextPage || INIT_URL))
       .then((res) => {
-        setProductList((prevProductList) => {
-          return [...prevProductList, ...res.data.data];
-        });
-        setPage((prevPageNumber) => prevPageNumber + 1);
-        setMoreProducts(res.data.count > 0);
+        setProductList((prevProductList) => [
+          ...prevProductList,
+          ...res.data.data
+        ]);
+
+        setNextPage(res.data.nextPage);
         setIsFetching(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }
+
+  const cantLoadMore = productsList.length && !nextPage;
+
   return (
     <div>
       <ProductList
         title={'Products'}
         productList={productsList}
-        onClick={loadMoreProducts}
         isFetching={isFetching}
-        moreProducts={moreProducts}
       />
+
+      {isFetching && <p>Loading more products...</p>}
+      {!isFetching && !cantLoadMore && (
+        <button onClick={loadMoreProducts}>Load more</button>
+      )}
     </div>
   );
 }
