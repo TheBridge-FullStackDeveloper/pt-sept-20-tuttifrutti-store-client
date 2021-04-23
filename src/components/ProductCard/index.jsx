@@ -28,7 +28,7 @@ export default function ProductCard({
       });
   }
   return (
-    <div classname="homePage">
+    <div className="homePage">
       <div className="productCard">
         <div>
           <Picture
