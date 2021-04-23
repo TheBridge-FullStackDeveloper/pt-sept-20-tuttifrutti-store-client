@@ -38,6 +38,17 @@ export default function CartPage() {
   const [productSaved, setProductSaved] = useState([]);
   const { user } = useContext(UserContext);
 
+  // useEffect(() => {
+  //
+  //         axios.get("http://localhost:4000/api/products/cart")
+  //             .then(res => {
+  //                 setCategories(res.data);
+
+  //                 console.log(productSaved);
+  //             });
+  //
+  // }, []);
+
   useEffect(() => {
     setProductSaved(productSavedMock);
   }, []);

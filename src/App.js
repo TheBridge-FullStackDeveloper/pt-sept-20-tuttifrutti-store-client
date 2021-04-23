@@ -8,12 +8,14 @@ import Home from './pages/home';
 import LoginPage from './pages/Login';
 import OrderPage from './pages/OrderPage';
 import ProductPage from './pages/ProductPage';
+import Profile from './pages/Profile';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
-import ProductList from './components/ProductList/index';
 import Register from './components/Register/Register';
 import Products from './pages/Products';
+import ProductList from './components/ProductList/index';
+import SearchPage from './pages/SearchPage';
 
 import './App.css';
 
@@ -33,7 +35,7 @@ function App() {
             </Route>
 
             <Route exact path="/search">
-              {/* search component */}
+              <SearchPage />
             </Route>
 
             <Route exact path="/favorites">
@@ -57,7 +59,11 @@ function App() {
             </Route>
 
             <Route exact path="/profile">
-              {/* go to profile */}
+              <Profile />
+            </Route>
+
+            <Route path="/register">
+              <Register />
             </Route>
 
             <Route path="/login">
