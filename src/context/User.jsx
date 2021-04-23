@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getShortProfile, postLogin } from '../services/auth';
+import { getShortProfile, postLogin, logout } from '../services/auth';
 
 export const UserContext = React.createContext(null);
 
@@ -25,5 +25,9 @@ export function useUser() {
     });
   }
 
-  return { user, loading, login };
+  async function userLogout() {
+    logout().then(setUser(null));
+  }
+
+  return { user, loading, login, userLogout };
 }
