@@ -33,3 +33,12 @@ export async function postLogin(email, password) {
     return null;
   }
 }
+
+export async function logout() {
+  try {
+    return axios.get(`${BASE_URL}/auth/logout`);
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+}
