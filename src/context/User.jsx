@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { getShortProfile, postLogin, logout } from '../services/auth';
+import {
+  getShortProfile,
+  postLogin,
+  getLogout,
+  postRegister
+} from '../services/auth';
 
+// User Context
 export const UserContext = React.createContext(null);
 
+// User custom hook
 export function useUser() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -10,7 +17,9 @@ export function useUser() {
   useEffect(() => {
     getShortProfile()
       .then((id) => {
-        setUser({ id });
+        if (id) {
+          setUser({ id });
+        }
       })
       .finally(() => {
         setLoading(false);
@@ -18,17 +27,19 @@ export function useUser() {
   }, []);
 
   async function login(email, password) {
-    postLogin(email, password).then((email) => {
-      console.log(email);
-      if (email) {
-        setUser({ ...(user || {}), email });
-      }
+    postLogin(email, password).then((userData) => {
+      setUser({ ...(user || {}), ...userData });
     });
   }
 
-  async function userLogout() {
-    logout().then(() => setUser(null));
+  async function register(body) {
+    const userData = await postRegister(body);
+    setUser(userData);
   }
 
-  return { user, loading, login, userLogout };
+  async function logout() {
+    getLogout().then(() => setUser(null));
+  }
+
+  return { user, loading, login, register, logout };
 }

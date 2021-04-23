@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { errorMessage } from '../../constants/formErrors';
+import { UserContext } from '../../context/User';
 
 import './Register.scss';
 
 export default function Register() {
+  const { register: userRegister } = useContext(UserContext);
+
   const {
     handleSubmit,
     register,
@@ -19,9 +23,16 @@ export default function Register() {
       monthExpirationDate: Number(formValues.monthExpirationDate),
       yearExpirationDate: Number(formValues.yearExpirationDate)
     };
-    console.log(parsedData); // transform the parsed data into signup context function
-    e.target.reset();
+
+    userRegister(parsedData)
+      .then(() => {
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
   return (
     <div className="formPage">
       <div className="form">
@@ -57,9 +68,9 @@ export default function Register() {
           <label>Email (*)</label>
           <input
             type="text"
-            id="mail"
+            id="email"
             placeholder="jondoe@gmail.com"
-            {...register('mail', {
+            {...register('email', {
               required: true,
               pattern: {
                 value: /^\S+@\S+$/i

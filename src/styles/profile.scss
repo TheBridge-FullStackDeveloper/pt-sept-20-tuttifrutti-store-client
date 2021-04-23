@@ -1,11 +1,3 @@
-:root {
-  --color-offwhite-text: #e2ebef;
-  --color-red-button: #e65b5f;
-  --color-background-img: #f3f6f7;
-  --color-gray-background: rgb(82, 82, 82);
-  --color-offwhite-search: #f3f6f7;
-}
-
 .profilePage {
   background: linear-gradient(50deg, #9bc0cc, #ffffff);
   width: 100%;
@@ -15,13 +7,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.profile__registerLink > Link {
-  color: var(--color-red-button);
-  font-size: 20px;
-}
-.profile__registerLink > Link:active {
-  color: var(--color-red-button);
-  font-size: 20px;
 }

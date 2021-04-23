@@ -1,6 +1,10 @@
-import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
 import { UserContext } from '../../context/User';
+
+import './styles.scss';
 
 export default function LoginForm() {
   const { login } = useContext(UserContext);
@@ -46,6 +50,13 @@ export default function LoginForm() {
         <br />
         <button type="submit">Login</button>
       </form>
+
+      <div className="profile__registerLink">
+        <h5>
+          Not yet a user of Tutti.Frutti?
+          <Link to="/register"> Register</Link>
+        </h5>
+      </div>
     </>
   );
 }

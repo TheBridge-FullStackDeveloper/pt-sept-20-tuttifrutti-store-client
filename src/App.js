@@ -1,7 +1,5 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { UserContext, useUser } from './context/User';
-
-import Loader from 'react-loader-spinner';
 
 import CartPage from './pages/CartPage';
 import Category from './pages/Category';
@@ -16,8 +14,9 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Register from './components/Register/Register';
 import Products from './pages/Products';
-import ProductList from './components/ProductList/index';
 import SearchPage from './pages/SearchPage';
+import ProductList from './components/ProductList/index';
+import WithAuthentication from './components/hocs/WithAuthentication';
 
 import './App.css';
 
@@ -41,11 +40,15 @@ function App() {
             </Route>
 
             <Route exact path="/favorites">
-              <Favorites />
+              <WithAuthentication>
+                <Favorites />
+              </WithAuthentication>
             </Route>
 
             <Route exact path="/cart">
-              <CartPage />
+              <WithAuthentication>
+                <CartPage />
+              </WithAuthentication>
             </Route>
 
             <Route exact path="/list">
@@ -57,27 +60,15 @@ function App() {
             </Route>
 
             <Route exact path="/order">
-              <OrderPage />
+              <WithAuthentication>
+                <OrderPage />
+              </WithAuthentication>
             </Route>
 
             <Route exact path="/profile">
-              {userContextData.loading ? (
-                <Loader
-                  type="ThreeDots"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                  timeout={2000}
-                />
-              ) : (
-                <>
-                  {userContextData.user ? (
-                    <Profile />
-                  ) : (
-                    <Redirect to="/login" />
-                  )}
-                </>
-              )}
+              <WithAuthentication>
+                <Profile />
+              </WithAuthentication>
             </Route>
 
             <Route path="/register">
