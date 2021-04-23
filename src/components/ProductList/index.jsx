@@ -8,6 +8,7 @@ const ProductList = ({ title, productList }) => {
       <div className="productList__productListTitle">
         <h3>{title}</h3>
       </div>
+
       <div className="productList__box">
         {productList.map((card, index) => (
           <ProductCard key={index} {...card} />

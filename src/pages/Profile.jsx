@@ -7,7 +7,7 @@ import '../styles/profile.scss';
 export default function Profile() {
   return (
     <div className="profilePage">
-      <div classname="profile">
+      <div className="profile">
         <div>
           <LoginForm />
         </div>
