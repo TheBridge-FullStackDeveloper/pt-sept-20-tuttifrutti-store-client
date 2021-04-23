@@ -22,10 +22,10 @@ import SearchPage from './pages/SearchPage';
 import './App.css';
 
 function App() {
-  const { userContextInput, loading, user } = useUser();
+  const userContextData = useUser();
 
   return (
-    <UserContext.Provider value={{ userContextInput, loading, user }}>
+    <UserContext.Provider value={userContextData}>
       <div className="App">
         <Header />
         <NavBar />
@@ -61,7 +61,7 @@ function App() {
             </Route>
 
             <Route exact path="/profile">
-              {loading ? (
+              {userContextData.loading ? (
                 <Loader
                   type="ThreeDots"
                   color="#00BFFF"
@@ -70,7 +70,13 @@ function App() {
                   timeout={2000}
                 />
               ) : (
-                <>{user ? <Profile /> : <Redirect to="/login" />}</>
+                <>
+                  {userContextData.user ? (
+                    <Profile />
+                  ) : (
+                    <Redirect to="/login" />
+                  )}
+                </>
               )}
             </Route>
 
