@@ -36,8 +36,7 @@ export async function postLogin(email, password) {
 
 export async function logout() {
   try {
-    const res = await axios.get(`${BASE_URL}/auth/logout`);
-    return res;
+    return axios.get(`${BASE_URL}/auth/logout`);
   } catch (err) {
     console.log(err);
     return null;

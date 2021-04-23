@@ -26,7 +26,7 @@ export function useUser() {
   }
 
   async function userLogout() {
-    logout().then(setUser(null));
+    logout().then(() => setUser(null));
   }
 
   return { user, loading, login, userLogout };
