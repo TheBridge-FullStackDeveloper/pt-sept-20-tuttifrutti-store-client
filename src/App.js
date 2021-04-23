@@ -1,5 +1,7 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { UserContext, useUser } from './context/User';
+
+import Loader from 'react-loader-spinner';
 
 import CartPage from './pages/CartPage';
 import Category from './pages/Category';
@@ -20,10 +22,10 @@ import SearchPage from './pages/SearchPage';
 import './App.css';
 
 function App() {
-  const userContextInput = useUser();
+  const { userContextInput, loading, user } = useUser();
 
   return (
-    <UserContext.Provider value={userContextInput}>
+    <UserContext.Provider value={{ userContextInput, loading, user }}>
       <div className="App">
         <Header />
         <NavBar />
@@ -59,7 +61,17 @@ function App() {
             </Route>
 
             <Route exact path="/profile">
-              <Profile />
+              {loading ? (
+                <Loader
+                  type="ThreeDots"
+                  color="#00BFFF"
+                  height={100}
+                  width={100}
+                  timeout={2000}
+                />
+              ) : (
+                <>{user ? <Profile /> : <Redirect to="/login" />}</>
+              )}
             </Route>
 
             <Route path="/register">
