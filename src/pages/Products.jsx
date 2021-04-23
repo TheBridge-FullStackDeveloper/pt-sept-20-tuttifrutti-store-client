@@ -9,29 +9,29 @@ export default function Products() {
   const [productsList, setProductList] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const [moreProducts, setMoreProducts] = useState(true);
 
   useEffect(() => {
-    loadMoreBeers();
+    loadMoreProducts();
   }, []);
 
-  function loadMoreBeers() {
+  function loadMoreProducts() {
     setIsFetching(true);
 
     axios
       .get(BASE_URL, {
-        params: { page: page }
+        params: { page: page, perPage: 5 }
       })
       .then((res) => {
-        setProductList((prevBeers) => {
-          return [...prevBeers, ...res.data.data];
+        setProductList((prevProductList) => {
+          return [...prevProductList, ...res.data.data];
         });
         setPage((prevPageNumber) => prevPageNumber + 1);
-        setHasMore(res.data.count > 0);
+        setMoreProducts(res.data.count > 0);
         setIsFetching(false);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        console.log(error);
       });
   }
   return (
@@ -39,9 +39,9 @@ export default function Products() {
       <ProductList
         title={'Products'}
         productList={productsList}
-        onClick={loadMoreBeers}
+        onClick={loadMoreProducts}
         isFetching={isFetching}
-        hasMore={hasMore}
+        moreProducts={moreProducts}
       />
     </div>
   );

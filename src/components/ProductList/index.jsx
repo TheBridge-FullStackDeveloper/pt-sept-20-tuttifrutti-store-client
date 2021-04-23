@@ -2,7 +2,13 @@ import ProductCard from '../ProductCard';
 
 import './styles.scss';
 
-const ProductList = ({ title, productList, onClick, isFetching, hasMore }) => {
+const ProductList = ({
+  title,
+  productList,
+  onClick,
+  isFetching,
+  moreProducts
+}) => {
   return (
     <section className="productList">
       <div className="productList__productListTitle">
@@ -18,7 +24,9 @@ const ProductList = ({ title, productList, onClick, isFetching, hasMore }) => {
         })}
       </div>
       {isFetching && <p>Loading more products...</p>}
-      {!isFetching && hasMore && <button onClick={onClick}>Load more</button>}
+      {!isFetching && moreProducts && (
+        <button onClick={onClick}>Load more</button>
+      )}
     </section>
   );
 };
