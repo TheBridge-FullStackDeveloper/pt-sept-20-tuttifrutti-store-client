@@ -20,7 +20,7 @@ export default function Products() {
 
     axios
       .get(BASE_URL, {
-        params: { page: page, perPage: 5 }
+        params: { page: page }
       })
       .then((res) => {
         setProductList((prevProductList) => {
