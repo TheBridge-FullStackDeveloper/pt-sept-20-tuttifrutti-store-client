@@ -85,7 +85,7 @@ export default function Register() {
           ) : null}
           <label>Password (*)</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             {...register('password', {
