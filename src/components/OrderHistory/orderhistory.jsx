@@ -2,8 +2,9 @@ import { React, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { transformDate } from '../../constants/transformDate';
+import { BASE_URL } from '../../constants';
 
-const PRODUCTS_URL = 'http://localhost:4000/api/orders';
+const PRODUCTS_URL = `${BASE_URL}/orders`;
 
 export default function OrderHistory() {
   const [orderList, setOrderList] = useState([]);

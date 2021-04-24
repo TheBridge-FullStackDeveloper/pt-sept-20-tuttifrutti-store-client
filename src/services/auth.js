@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const BASE_URL = 'http://localhost:4000/api';
+import { BASE_URL } from '../constants';
 
 export async function getShortProfile() {
   const res = await axios.get(`${BASE_URL}/auth/short-profile`, {

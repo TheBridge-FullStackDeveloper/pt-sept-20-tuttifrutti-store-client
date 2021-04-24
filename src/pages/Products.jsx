@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import ProductList from '../components/ProductList/index';
+import { BASE_URL } from '../constants';
 
-const BASE_URL = 'http://localhost:4000/api';
 const INIT_URL = '/products?page=1';
 
 export default function Products() {
