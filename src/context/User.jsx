@@ -3,7 +3,8 @@ import {
   getShortProfile,
   postLogin,
   getLogout,
-  postRegister
+  postRegister,
+  putRegister
 } from '../services/auth';
 
 // User Context
@@ -37,9 +38,14 @@ export function useUser() {
     setUser(userData);
   }
 
+  async function modifyRegister(body) {
+    const userData = await putRegister(body);
+    setUser(userData);
+  }
+
   async function logout() {
     getLogout().then(() => setUser(null));
   }
 
-  return { user, loading, login, register, logout };
+  return { user, loading, login, register, logout, modifyRegister };
 }
