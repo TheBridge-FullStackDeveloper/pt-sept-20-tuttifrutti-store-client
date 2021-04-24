@@ -6,14 +6,23 @@ import { UserContext } from '../../context/User';
 
 import './Register.scss';
 
+// este se cambiara por el User del profile
+const mockedProfile = {
+  name: 'Lalo',
+  email: 'lalo@hotmail.com',
+  password: '98j4hfaoh8hgri4jgj'
+};
+
 export default function Register() {
-  const { register: userRegister } = useContext(UserContext);
+  const { register: userRegister, modifyRegister } = useContext(UserContext);
 
   const {
     handleSubmit,
     register,
     formState: { errors }
-  } = useForm();
+  } = useForm({
+    defaultValues: mockedProfile ? mockedProfile : {}
+  });
 
   const handleFormSubmit = (formValues, e) => {
     const parsedData = {
@@ -24,13 +33,23 @@ export default function Register() {
       yearExpirationDate: Number(formValues.yearExpirationDate)
     };
 
-    userRegister(parsedData)
-      .then(() => {
-        e.target.reset();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (mockedProfile) {
+      modifyRegister(parsedData)
+        .then(() => {
+          e.target.reset();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      userRegister(parsedData)
+        .then(() => {
+          e.target.reset();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (
@@ -39,12 +58,12 @@ export default function Register() {
         <h1>Welcome</h1>
         <h4>Create Your Tutti.Frutti Account</h4>
         <form onSubmit={handleSubmit(handleFormSubmit)}>
-          <label>Name (*)</label>
+          <label htmlFor="name"> Name (*)</label>
           <input
             type="text"
-            id="firstName"
+            id="name"
             placeholder="First name"
-            {...register('firstName', {
+            {...register('name', {
               required: true,
               minLength: {
                 value: 2
@@ -52,18 +71,18 @@ export default function Register() {
               maxLength: 80
             })}
           />
-          {errors.firstName && errors.firstName.type === 'required' ? (
+          {errors.name && errors.name.type === 'required' ? (
             <p>{errorMessage.required}</p>
           ) : null}
-          {errors.firstName && errors.firstName.type === 'minLength' ? (
+          {errors.name && errors.name.type === 'minLength' ? (
             <p>{errorMessage.nameFieldLenght}</p>
           ) : null}
           <label>Surname</label>
           <input
             type="text"
-            id="lastName"
+            id="surname"
             placeholder="Last name"
-            {...register('lastName', { required: false, maxLength: 100 })}
+            {...register('surname', { required: false, maxLength: 100 })}
           />
           <label>Email (*)</label>
           <input
@@ -77,10 +96,10 @@ export default function Register() {
               }
             })}
           />
-          {errors.mail && errors.mail.type === 'required' ? (
+          {errors.email && errors.email.type === 'required' ? (
             <p>{errorMessage.required}</p>
           ) : null}
-          {errors.mail && errors.mail.type === 'pattern' ? (
+          {errors.email && errors.email.type === 'pattern' ? (
             <p>{errorMessage.emailPattern}</p>
           ) : null}
           <label>Password (*)</label>

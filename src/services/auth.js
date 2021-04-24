@@ -37,3 +37,11 @@ export async function getLogout() {
     withCredentials: true
   });
 }
+
+export async function putRegister(body) {
+  const res = await axios.put(`${BASE_URL}/users/modify`, body, {
+    withCredentials: true
+  });
+
+  return res.data.data;
+}
