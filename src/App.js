@@ -17,6 +17,7 @@ import Products from './pages/Products';
 import SearchPage from './pages/SearchPage';
 import ProductList from './components/ProductList/index';
 import WithAuthentication from './components/hocs/WithAuthentication';
+import OrderHistory from './components/OrderHistory/orderhistory';
 
 import './App.css';
 
@@ -62,6 +63,12 @@ function App() {
             <Route exact path="/order">
               <WithAuthentication>
                 <OrderPage />
+              </WithAuthentication>
+            </Route>
+
+            <Route exact path="/order-history">
+              <WithAuthentication>
+                <OrderHistory />
               </WithAuthentication>
             </Route>
 
