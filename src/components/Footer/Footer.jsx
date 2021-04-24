@@ -10,53 +10,52 @@ import './Footer.scss';
 export default function Footer() {
   return (
     <footer className="Footer">
-      <div className="Footer__socialIcons__list">
+      <ul className="Footer__social-icons__list">
+        <li>
         <a href="https://www.instagram.com/">
           <FontAwesomeIcon
             icon={faInstagram}
-            className="Footer__socialIcons  Footer__socialIcons--hover"
+            className="Footer__social-icons"
           />
         </a>
+        </li>
+        <li>
         <a href="https://www.snapchat.com/">
-          <FontAwesomeIcon
-            icon={faSnapchat}
-            className="Footer__socialIcons Footer__socialIcons--hover"
-          />
+          <FontAwesomeIcon icon={faSnapchat} className="Footer__social-icons" />
         </a>
+        </li>
+        <li>
         <a href="https://twitter.com/">
-          <FontAwesomeIcon
-            icon={faTwitter}
-            className="Footer__socialIcons Footer__socialIcons--hover"
-          />
+          <FontAwesomeIcon icon={faTwitter} className="Footer__social-icons" />
         </a>
+        </li>
+        <li>
         <a href="https://www.facebook.com/">
-          <FontAwesomeIcon
-            icon={faFacebook}
-            className="Footer__socialIcons Footer__socialIcons--hover"
-          />
+          <FontAwesomeIcon icon={faFacebook} className="Footer__social-icons" />
         </a>
-      </div>
-      <div className="Footer__listContainer">
-        <ul className="Footer__list">
-          <li className="listFooterItem">
-            <a href="https://www.google.com/">Home</a>
-          </li>
-          <li className="listFooterItem">
-            <a href="https://www.google.com/">Services</a>
-          </li>
-          <li className="listFooterItem">
-            <a href="https://www.google.com/">About</a>
-          </li>
-          <li className="listFooterItem">
-            <a href="https://www.google.com/">Terms</a>
-          </li>
-          <li className="listFooterItem">
-            <a href="https://www.google.com/">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-      <div className="copytightContainer">
-        <p className="copyright">Tutti Frutti © 2012</p>
+        </li>
+      </ul>
+
+      <ul className="Footer__list">
+        <li className="listFooterItem">
+          <a href="https://www.google.com/">Home</a>
+        </li>
+        <li className="listFooterItem">
+          <a href="https://www.google.com/">Services</a>
+        </li>
+        <li className="listFooterItem">
+          <a href="https://www.google.com/">About</a>
+        </li>
+        <li className="listFooterItem">
+          <a href="https://www.google.com/">Terms</a>
+        </li>
+        <li className="listFooterItem">
+          <a href="https://www.google.com/">Privacy Policy</a>
+        </li>
+      </ul>
+
+      <div className="Footer__copyright">
+        <p>Tutti Frutti © 2012</p>
       </div>
     </footer>
   );
