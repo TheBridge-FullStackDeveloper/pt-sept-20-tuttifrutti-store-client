@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
-import '../styles/Category.scss';
-
 import axios from 'axios';
 import { useParams } from 'react-router';
+
+import { BASE_URL } from '../constants';
+
+import '../styles/Category.scss';
 
 export default function Category() {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ export default function Category() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/products/category/?category=${category}`)
+      .get(`${BASE_URL}/products/category/?category=${category}`)
       .then((res) => {
         setProducts(res.data.data);
       });

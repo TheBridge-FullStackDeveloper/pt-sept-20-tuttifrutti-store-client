@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './navBar.scss';
-
 import axios from 'axios';
+
+import { BASE_URL } from '../../constants';
+
+import './navBar.scss';
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:4000/api/categories').then((res) => {
+    axios.get(`${BASE_URL}/categories`).then((res) => {
       setCategories(res.data.data);
     });
   }, []);

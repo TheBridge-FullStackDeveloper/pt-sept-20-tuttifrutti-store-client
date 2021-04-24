@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import Picture from '../Pictures';
 import axios from 'axios';
 
 import Button from '../Button';
+import Picture from '../Pictures';
+import { BASE_URL } from '../../constants';
 
 import './styles.scss';
 
@@ -17,10 +18,7 @@ export default function ProductCard({
 
   function handleAddToCart() {
     axios
-      .put(
-        `http://localhost:4000/api/cart/add/${product.productId}?quantity=X`,
-        product
-      )
+      .put(`${BASE_URL}/cart/add/${product.productId}?quantity=X`, product)
       .then((res) => {
         setProduct(res.product);
 
