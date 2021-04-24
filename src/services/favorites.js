@@ -19,6 +19,7 @@ export const deleteFavorite = async (productId) => {
   try {
     const response = await axios.put(
       `${BASE_URL}/favorites/remove/${productId}`,
+      {},
       { withCredentials: true }
     );
 
