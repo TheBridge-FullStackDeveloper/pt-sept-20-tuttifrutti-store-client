@@ -1,10 +1,20 @@
+:root {
+  --color-offwhite-text: #e2ebef;
+  --color-red-button: #e65b5f;
+  --color-background-img: #f3f6f7;
+  --color-gray-background: rgb(82, 82, 82);
+  --color-offwhite-search: #f3f6f7;
+}
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  margin-top: 100px;
+  padding: 0;
 }
 
 code {

@@ -1,0 +1,24 @@
+@import '../../styles/commons.scss';
+
+.header {
+  @extend .flex-global;
+
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e2ebef;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+
+  &__icons {
+    @extend .flex-global;
+    width: 120px;
+    justify-content: space-between;
+  }
+}
+
+img {
+  width: 90px;
+  height: 90px;
+}

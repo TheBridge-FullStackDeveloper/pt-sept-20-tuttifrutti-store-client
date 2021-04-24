@@ -1,0 +1,65 @@
+.iconBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  min-width: 80px;
+}
+
+.iconlink {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: box-shadow 0.3s;
+
+  &__icon {
+    border-radius: 50%;
+    font-size: 30px;
+    color: lightgray;
+  }
+
+  &__text {
+    color: grey;
+    font-size: x-small;
+  }
+
+  &--hover {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 11px rgba(136, 131, 131, 0.2);
+      color: rgb(169 169 169);
+      background-color: rgba(47, 48, 49, 0.213);
+    }
+  }
+}
+
+[data-title] {
+  position: relative;
+
+  &:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -26px;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 2px;
+    background: rgb(169 169 169);
+    color: #fff;
+    font-size: 12px;
+    font-family: sans-serif;
+    white-space: nowrap;
+  }
+
+  &:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 8px;
+    display: inline-block;
+    color: #fff;
+    border: 8px solid transparent;
+    border-bottom: 8px solid rgb(169 169 169);
+  }
+}

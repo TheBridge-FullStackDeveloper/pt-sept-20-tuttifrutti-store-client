@@ -1,0 +1,11 @@
+.profile {
+  &__registerLink > Link {
+    color: var(--color-red-button);
+    font-size: 20px;
+
+    &:active {
+      color: var(--color-red-button);
+      font-size: 20px;
+    }
+  }
+}

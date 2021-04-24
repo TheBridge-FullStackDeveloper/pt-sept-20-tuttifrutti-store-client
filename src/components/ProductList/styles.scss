@@ -1,0 +1,31 @@
+@import '../../styles/commons.scss';
+
+.productList {
+  @extend .flex-global;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  background-color: #e2ebef;
+
+  &__productListTitle {
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0;
+    color: white;
+    text-transform: capitalize;
+    margin: 15px;
+  }
+  &__box {
+    @extend .flex-global;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding: 15px;
+  }
+}
+
+h3 {
+  margin: 0;
+}
