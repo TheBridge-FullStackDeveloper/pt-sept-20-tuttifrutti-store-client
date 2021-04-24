@@ -1,32 +1,47 @@
 import { Link } from 'react-router-dom';
-import Picture from '../Pictures';
-import Button from '../Button';
+import { removeFromCart } from '../../services/cart';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+
+import './ProductOptionCard.scss';
 
 export default function ProductOptionCard({
   picture,
   name,
-  className,
-  onClickDelete,
-  type,
-  text,
   productId,
-  price
+  price,
+  quantity,
+  deleteFromViewCart
 }) {
+  const handleRemove = (idToBeRemoved) => {
+    removeFromCart(idToBeRemoved).then(() => {
+      deleteFromViewCart(idToBeRemoved);
+    });
+  };
+
   return (
-    <div className="savedCart">
-      <div>
-        <Picture picture={picture} name={name} />
+    <div className="cart_container_singleProduct" key={productId}>
+      <Link to={`/product/${productId}`}>
+        <img className="cart_image" src={picture} alt={name}></img>
+      </Link>
+      <div className="cart_info">
+        <div>
+          <strong>Product:</strong> {name}
+        </div>
+        <div>
+          <strong>Price:</strong> {price}€
+        </div>
+        <div>
+          <strong>Quantity:</strong> {quantity}
+        </div>
       </div>
-      <div>{price}</div>
-      <div>
-        <Button
-          className={className}
-          onClick={onClickDelete}
-          type={type}
-          text="Eliminar"
-        />
-        <Link to={`/product/${productId}`}>VER PRODUCTO</Link>
-      </div>
+      <button
+        className="cart_removeButton"
+        onClick={() => handleRemove(productId)}
+      >
+        <FontAwesomeIcon icon={faCartPlus} className="cart_removeButton" />
+      </button>
     </div>
   );
 }

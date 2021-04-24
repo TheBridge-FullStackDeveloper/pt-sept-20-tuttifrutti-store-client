@@ -1,0 +1,27 @@
+.cart_image {
+  height: 70px;
+  margin-right: 12px;
+  border-radius: 50%;
+  width: 70px;
+}
+
+.cart_removeButton {
+  height: 30px;
+  justify-content: right;
+  align-self: center;
+  display: flex;
+  color: #ed1a3a;
+  opacity: 0.9;
+  background: #f3f6f7;
+  border-radius: 10px;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--color-offwhite-text);
+  display: block;
+}
+
+.cart_info {
+  display: grid;
+}
