@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import axios from 'axios';
+
+import { transformDate } from '../../constants/transformDate';
 
 const PRODUCTS_URL = 'http://localhost:4000/api/orders';
 
@@ -16,27 +18,26 @@ export default function OrderHistory() {
     });
   }
 
-  console.log(orderList);
-
   return (
     <div>
       <h2>My order history</h2>
       {orderList.map((order, index) => (
-        <>
-          <h4 key={index}>Order Status: {order.state}</h4>
-          <h4 key={index}>Date of Order: {order.createdAt}</h4>
-          <h4 key={index}>Products: {order.totalPrice}</h4>
-          <h4 key={index}>
-            Total Amount:{' '}
+        <div key={index}>
+          <h4>Order Status: {order.state}</h4>
+          <h4>Date of Order: {transformDate(order.createdAt)}</h4>
+          <h4>State: {order.state}</h4>
+          <h4>Total Amount: {order.totalPrice}</h4>
+          <h4>
+            Products:
             {order.productsQuantity.map((product, index) => (
-              <>
-                <h4 key={index}>Product: {product.productId.brand}</h4>
-                <h4 key={index}>Product: {product.productId.name}</h4>
-                <h4 key={index}>Product: {product.productId.pictures[0]}</h4>
-              </>
+              <div key={index}>
+                <h4>Brand: {product.productId.brand}</h4>
+                <h4>Name: {product.productId.productName}</h4>
+                <h4>{product.productId.pictures[0]}</h4>
+              </div>
             ))}
           </h4>
-        </>
+        </div>
       ))}
     </div>
   );
