@@ -83,7 +83,7 @@ function App() {
               <Category />
             </Route>
 
-            <Route exact path="/product/:id">
+            <Route exact path="/product/:productId">
               <ProductPage />
             </Route>
           </Switch>
