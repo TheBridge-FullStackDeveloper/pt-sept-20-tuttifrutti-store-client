@@ -10,8 +10,8 @@ const ProductList = ({ title, productList }) => {
       </div>
 
       <div className="productList__box">
-        {productList.map((card, index) => (
-          <ProductCard key={index} {...card} />
+        {productList.map((product, index) => (
+          <ProductCard key={index} {...product} />
         ))}
       </div>
     </section>

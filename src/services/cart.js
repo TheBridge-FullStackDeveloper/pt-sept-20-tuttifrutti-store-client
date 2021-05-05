@@ -14,10 +14,14 @@ export const getCart = async () => {
   }
 };
 
-export const removeFromCart = async (productId) => {
+export const createOrder = async () => {
+  return await axios.post(`${BASE_URL}/orders`, {}, { withCredentials: true });
+};
+
+export const removeFromCart = async (productId, quantity = 1) => {
   try {
     const response = await axios.put(
-      `${BASE_URL}/cart/remove/${productId}`,
+      `${BASE_URL}/cart/remove/${productId}?quantity=${quantity}`,
       {},
       { withCredentials: true }
     );
@@ -27,4 +31,12 @@ export const removeFromCart = async (productId) => {
     console.log(error);
     return null;
   }
+};
+
+export const updateCart = async (productId, quantity) => {
+  return await axios.put(
+    `${BASE_URL}/cart/update/${productId}?quantity=${quantity}`,
+    {},
+    { withCredentials: true }
+  );
 };

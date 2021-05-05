@@ -5,7 +5,7 @@ import LoginForm from '../components/LoginForm/LoginForm';
 import ProductOptionCard from '../components/ProductOptionCard/ProductOptionCard';
 import { UserContext } from '../context/User';
 
-import { getCart } from '../services/cart';
+import { getCart, createOrder } from '../services/cart';
 
 import '../styles/CartPage.scss';
 
@@ -13,12 +13,12 @@ export default function CartPage() {
   const [cart, setCart] = useState(null);
   const { user } = useContext(UserContext);
 
-  const deleteFromViewCart = (id) => {
+  const updateCartFront = (id, quantity) => {
     const itemsWithUpdatedQuantity = cart.map((item) => {
       if (item.productId._id === id) {
         return {
           ...item,
-          quantity: item.quantity - 1
+          quantity
         };
       }
       return item;
@@ -32,10 +32,16 @@ export default function CartPage() {
     setCart(newRemovedCart);
   };
 
+  const createOrderButton = () => {
+    createOrder()
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  };
+
   useEffect(() => {
     if (user) {
       getCart().then((res) => {
-        setCart(res.productsQuantity);
+        setCart(res?.productsQuantity);
       });
     }
   }, [user]);
@@ -53,7 +59,7 @@ export default function CartPage() {
                     picture={p.productId.pictures[0]}
                     name={p.productId.productName}
                     productId={p.productId._id}
-                    deleteFromViewCart={deleteFromViewCart}
+                    updateCartFront={updateCartFront}
                     price={p.productId.price}
                     quantity={p.quantity}
                   />
@@ -61,9 +67,10 @@ export default function CartPage() {
               ))
             : null}
         </div>
-        <Link className="cartPage_buttonBuy" to="/order">
-          {' '}
-          Order now ✌️
+        <Link to="/order">
+          <button className="cartPage_buttonBuy" onClick={createOrderButton}>
+            Order now ✌️
+          </button>
         </Link>
       </div>
     );
